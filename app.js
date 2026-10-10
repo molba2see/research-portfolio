@@ -57,7 +57,10 @@ const projects = [
     "후속 크롤링 코드 · 비공개",
     "https://github.com/yujalabs-dev/lafd-data-processing"
    ]
-  ]
+  ],
+  "kind": "project",
+  "outcome_kind": "팀 수상 · 서비스 구현",
+  "outcome": "캡스톤 금상 · 공개 팀 지표 기준 평균 추천 응답 약 1.8초"
  },
  {
   "id": "recommendation",
@@ -133,7 +136,10 @@ const projects = [
     "연구·Figure 작업 자료 · 비공개",
     "https://github.com/molba2see/lafd2"
    ]
-  ]
+  ],
+  "kind": "research",
+  "outcome_kind": "재현 · 실험 관리",
+  "outcome": "HGIB 도메인 적용, 3개 베이스라인 결과 비교와 공통 실행·추론 경로 구성"
  },
  {
   "id": "persona",
@@ -177,7 +183,10 @@ const projects = [
     "발표 및 학습 기록",
     "https://app.notion.com/p/e389082a41fc8357ad3201fa4a604413"
    ]
-  ]
+  ],
+  "kind": "project",
+  "outcome_kind": "팀 비교 실험",
+  "outcome": "두 페르소나 × 세 학습 조건의 6개 모델 비교 · 일부 모델 학습과 최종 발표 담당"
  },
  {
   "id": "ppc",
@@ -225,7 +234,10 @@ const projects = [
     "최종 발표 PDF",
     "https://drive.google.com/file/d/1_7gyQNyCLge4HwthdG3da3VPoyUkFMX1/view"
    ]
-  ]
+  ],
+  "kind": "project",
+  "outcome_kind": "서비스 시연 · 발표",
+  "outcome": "성향별 종목 보고서 생성 시연 · 4인 팀장으로 연합 컨퍼런스 발표"
  },
  {
   "id": "sign",
@@ -246,6 +258,10 @@ const projects = [
   "repo": "https://github.com/molba2see/adv-pj-a",
   "summary": "한국어 글로스 변환과 동작 생성을 분리해 다루는 접근성 프로젝트입니다. 검색과 학습 경로를 비교할 파이프라인을 구축하고 있습니다.",
   "sections": [
+   [
+    "활동과 관심의 연결",
+    "2024년부터 수어동아리 손말사랑회에서 활동하고, 2025년부터 2년 임기의 부회장을 맡고 있습니다. 수어 동아리 활동과 한국수어 AI 프로젝트 경험을 함께 소개합니다."
+   ],
    [
     "연구 목표",
     "한국어의 의미를 수어 글로스와 동작으로 연결하고자 합니다. 언어 단계의 단어 선택·어순과 모션 단계의 신체·손 표현을 각각 검증하는 것이 목표입니다."
@@ -273,7 +289,10 @@ const projects = [
     "모션 학습 경로",
     "https://github.com/molba2see/adv-pj-a/blob/main/avatar/SIGN_MOTION_LORA.md"
    ]
-  ]
+  ],
+  "kind": "project",
+  "outcome_kind": "파이프라인 구축 · 진행 중",
+  "outcome": "글로스 SFT·LoRA·RAG 및 모션 학습 경로 구축 · 성능 검증 진행 전"
  },
  {
   "id": "customs",
@@ -321,7 +340,10 @@ const projects = [
     "https://app.notion.com/p/a119082a41fc82cc8da3016e825dbb72"
    ]
   ],
-  "competition": true
+  "competition": true,
+  "kind": "project",
+  "outcome_kind": "챗봇 구현",
+  "outcome": "HS코드 분류 지원 챗봇 완성 · 파인튜닝과 UX 담당"
  },
  {
   "id": "os",
@@ -360,7 +382,10 @@ const projects = [
     "프로젝트 코드",
     "https://github.com/molba2see/portfolio-os"
    ]
-  ]
+  ],
+  "kind": "project",
+  "outcome_kind": "API 구현",
+  "outcome": "프로젝트·활동·교육 데이터 CRUD와 대시보드 요약 API 구현"
  },
  {
   "id": "weather",
@@ -409,7 +434,10 @@ const projects = [
     "https://app.notion.com/p/20e9082a41fc80ad8e3cd814644430ed"
    ]
   ],
-  "competition": true
+  "competition": true,
+  "kind": "project",
+  "outcome_kind": "저장된 실험 · 팀 채택",
+  "outcome": "본인 LightGBM 튜닝 기록 RMSE 0.77 · 팀 채택 표시"
  },
  {
   "id": "shipping",
@@ -458,7 +486,10 @@ const projects = [
     "https://app.notion.com/p/2739082a41fc8027af57fcb74a78952e"
    ]
   ],
-  "competition": true
+  "competition": true,
+  "kind": "project",
+  "outcome_kind": "저장된 제출 실험",
+  "outcome": "본인 MLP 기록 public 0.81058 · 폴드·시드별 검증과 제출 점수 비교"
  },
  {
   "id": "kopis",
@@ -503,7 +534,10 @@ const projects = [
     "https://app.notion.com/p/23a9082a41fc80beb740c3db7db429fd"
    ]
   ],
-  "competition": true
+  "competition": true,
+  "kind": "project",
+  "outcome_kind": "서비스 제안",
+  "outcome": "공연 패스권 제안서의 배경·필요성과 분석 방법 설계 · 구현 성과와 구분"
  },
  {
   "id": "agent",
@@ -552,7 +586,10 @@ const projects = [
     "https://github.com/yujalabs-dev/lafd-ai-agent"
    ]
   ],
-  "competition": false
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "워크플로우 구현",
+  "outcome": "추천·브랜드 문서 검색·제안서 생성과 실행 상태 관리 경로 통합"
  },
  {
   "id": "music",
@@ -628,22 +665,27 @@ const projects = [
     "3 / 3",
     "동일 음원에서 후보 없음"
    ]
-  ]
+  ],
+  "kind": "project",
+  "outcome_kind": "실측 · 통제 평가",
+  "outcome": "한 곡 전처리 132→35.4초 · 인위적 변화 11/11 탐지, 실제 합주 정확도 미평가"
  }
 ];
 const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const graphArt='<svg viewBox="0 0 450 150" aria-hidden="true"><g stroke="currentColor" opacity=".35" fill="none"><path d="M50 75L160 30L265 75L380 38L400 115L265 75L155 120L50 75L380 38M160 30L155 120M155 120L400 115"/></g><g fill="currentColor" opacity=".7"><circle cx="50" cy="75" r="7"/><circle cx="160" cy="30" r="6"/><circle cx="155" cy="120" r="6"/><circle cx="380" cy="38" r="8"/><circle cx="400" cy="115" r="7"/></g><circle cx="265" cy="75" r="24" fill="none" stroke="currentColor"/><circle cx="265" cy="75" r="6" fill="currentColor"/><circle cx="265" cy="75" r="40" fill="none" stroke="currentColor" stroke-dasharray="2 6" opacity=".4"/></svg>';
 const arts={match:graphArt,research:graphArt,language:'<div class="art-word">SFT <span style="font-size:24px;opacity:.5">→</span> DPO<small>ALIGNING A CONVERSATION</small></div>',financial:'<svg viewBox="0 0 450 150" aria-hidden="true"><g fill="none" stroke="#b48457" opacity=".3"><path d="M45 125H405M45 90H405M45 55H405M45 20H405"/></g><path d="M45 105L100 80L155 95L215 60L275 65L335 33L405 20" fill="none" stroke="#ad5a26" stroke-width="2"/><g fill="#ad5a26"><circle cx="100" cy="80" r="4"/><circle cx="215" cy="60" r="4"/><circle cx="335" cy="33" r="4"/></g><text x="290" y="130" fill="#93623d" font-size="10" font-family="monospace">PERSONAL PORT COLOR</text></svg>',sign:'<svg viewBox="0 0 450 150" aria-hidden="true"><g fill="none" stroke="#bd7740"><path d="M225 47V86L189 120M225 86L256 120M225 58L187 75L152 37M225 58L263 78L297 44M152 37L142 21M152 37L153 16M152 37L165 20M297 44L290 26M297 44L300 22M297 44L312 29" stroke-width="2"/><circle cx="225" cy="29" r="17"/></g><g fill="#984c1a"><circle cx="225" cy="58" r="4"/><circle cx="187" cy="75" r="4"/><circle cx="263" cy="78" r="4"/><circle cx="225" cy="86" r="4"/><circle cx="152" cy="37" r="4"/><circle cx="297" cy="44" r="4"/></g><text x="28" y="84" font-size="11" fill="#92643c" font-family="monospace">LANGUAGE</text><text x="340" y="84" font-size="11" fill="#92643c" font-family="monospace">MOTION</text></svg>',customs:'<div class="art-word" style="color:#b76536">HS <span style="font-size:30px;opacity:.55">/</span> Code<small>FROM DESCRIPTION TO CLASSIFICATION</small></div>',software:'<div class="art-word" style="color:#a36527">Portfolio OS<small>ONE RECORD, MANY POSSIBILITIES</small></div>'};
 const grid=document.querySelector('#project-grid');
-grid.innerHTML=projects.map((p,i)=>`<article class="project-card" data-type="${p.type}" data-competition="${!!p.competition}"><div class="project-art ${p.art}"><span class="art-label">${esc(p.label)}</span>${arts[p.art]}<span class="art-id">PROJECT ${String(i+1).padStart(2,'0')}</span></div><div class="project-content"><div class="project-topline"><span>${esc(p.date)}</span><span class="status">${esc(p.status)}</span></div><h3>${esc(p.title)}</h3><p class="description">${esc(p.subtitle)}</p><p class="role-line"><b>기여</b>${esc(p.role)}</p><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div><div class="project-bottom"><button data-project="${p.id}" aria-label="${esc(p.title)} 상세 보기">프로젝트 읽기 <span>↗</span></button>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>`:'<span style="font-size:10px;color:var(--muted)">프로젝트 기록</span>'}</div></div></article>`).join('');
+const renderCards = list => list.map((p,i)=>`<article class="project-card" data-type="${p.type}" data-competition="${!!p.competition}"><div class="project-art ${p.art}"><span class="art-label">${esc(p.label)}</span>${arts[p.art]}<span class="art-id">${p.kind==='research'?'RESEARCH':'PROJECT'} ${String(i+1).padStart(2,'0')}</span></div><div class="project-content"><div class="project-topline"><span>${esc(p.date)}</span><span class="status">${esc(p.status)}</span></div><h3>${esc(p.title)}</h3><p class="description">${esc(p.subtitle)}</p><p class="role-line"><b>기여</b>${esc(p.role)}</p><div class="outcome-box"><span>성과 · ${esc(p.outcome_kind)}</span><p>${esc(p.outcome)}</p></div><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div><div class="project-bottom"><button data-project="${p.id}" aria-label="${esc(p.title)} 상세 보기">프로젝트 읽기 <span>↗</span></button>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>`:'<span style="font-size:10px;color:var(--muted)">프로젝트 기록</span>'}</div></div></article>`).join('');
+grid.innerHTML=renderCards(projects.filter(p=>p.kind==='project'));
+document.querySelector('#research-experience-grid').innerHTML=renderCards(projects.filter(p=>p.kind==='research'));
 document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{
  document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',b===btn?'true':'false')});
- let count=0;document.querySelectorAll('.project-card').forEach(card=>{card.hidden=btn.dataset.filter==='competition'?card.dataset.competition!=='true':btn.dataset.filter!=='all'&&card.dataset.type!==btn.dataset.filter;if(!card.hidden)count++});
+ let count=0;grid.querySelectorAll('.project-card').forEach(card=>{card.hidden=btn.dataset.filter==='competition'?card.dataset.competition!=='true':btn.dataset.filter!=='all'&&card.dataset.type!==btn.dataset.filter;if(!card.hidden)count++});
  document.querySelector('#project-count').textContent=`${count} projects`;
 }));
 const dialog=document.querySelector('#project-dialog');let lastTrigger=null;
-grid.addEventListener('click',event=>{const btn=event.target.closest('[data-project]');if(!btn)return;const p=projects.find(p=>p.id===btn.dataset.project);lastTrigger=btn;
- document.querySelector('#dialog-content').innerHTML=`<p class="dialog-meta">${esc(p.date)} / ${esc(p.status)}</p><h2 id="dialog-title">${esc(p.title)}</h2><p class="dialog-summary">${esc(p.summary)}</p><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div>${p.metrics?`<div class="project-metrics">${p.metrics.map(([value,label])=>`<div><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`).join('')}</div>`:''}${p.sections.map(([title,text])=>`<h3>${esc(title)}</h3><p class="detail-p">${esc(text)}</p>`).join('')}<p class="detail-note">${esc(p.note)}</p><div class="detail-links">${p.links.map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`).join('')}</div>`;
+document.querySelector('main').addEventListener('click',event=>{const btn=event.target.closest('[data-project]');if(!btn)return;const p=projects.find(p=>p.id===btn.dataset.project);lastTrigger=btn;
+ document.querySelector('#dialog-content').innerHTML=`<p class="dialog-meta">${esc(p.date)} / ${esc(p.status)}</p><h2 id="dialog-title">${esc(p.title)}</h2><p class="dialog-summary">${esc(p.summary)}</p><div class="outcome-box"><span>성과 · ${esc(p.outcome_kind)}</span><p>${esc(p.outcome)}</p></div><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div>${p.metrics?`<div class="project-metrics">${p.metrics.map(([value,label])=>`<div><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`).join('')}</div>`:''}${p.sections.map(([title,text])=>`<h3>${esc(title)}</h3><p class="detail-p">${esc(text)}</p>`).join('')}<p class="detail-note">${esc(p.note)}</p><div class="detail-links">${p.links.map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`).join('')}</div>`;
  dialog.showModal();dialog.scrollTop=0;document.body.classList.add('dialog-open');
 });
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
