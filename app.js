@@ -669,11 +669,65 @@ const projects = [
   "kind": "project",
   "outcome_kind": "실측 · 통제 평가",
   "outcome": "한 곡 전처리 132→35.4초 · 인위적 변화 11/11 탐지, 실제 합주 정확도 미평가"
+ },
+ {
+  "id": "moa",
+  "type": "software",
+  "art": "moa",
+  "label": "LOCAL AI AGENT / FILE WORKFLOW",
+  "title": "모아 · 파일 라이프사이클 에이전트",
+  "subtitle": "아이폰 캡처와 강의자료를 맥에서 정리하는 로컬 에이전트",
+  "date": "2026 가을",
+  "status": "팀 프로젝트 · 시연 구현",
+  "role": "파일 분류 흐름 · Mac 에이전트와 웹 연동",
+  "tags": ["Qwen3-1.7B", "macOS Vision", "Django", "iCloud Drive"],
+  "repo": "https://github.com/molba2see/KCC_agent",
+  "summary": "다운로드와 캡처 파일을 내용·출처·폴더 지침으로 분류하고, 사용자의 승인과 되돌리기를 연결하는 macOS 로컬 에이전트 및 웹 화면입니다.",
+  "sections": [
+   ["문제 정의", "강의자료, 아이폰 캡처, 설치 파일이 다운로드와 바탕화면에 쌓일 때 필요한 자료를 찾기 어렵습니다. 파일마다 내용을 확인하고 정리해야 하는 반복 작업을 줄이고자 했습니다."],
+   ["구현 흐름", "iCloud로 들어온 캡처는 macOS Vision OCR과 Qwen3-1.7B로 이름을 정하고, 폴더별 지침과 문서 본문·다운로드 출처를 바탕으로 분류합니다. 처음 보는 강의실은 사용자에게 목적 폴더를 물은 뒤 규칙으로 기억합니다."],
+   ["승인과 복구", "애매한 파일은 모아서 물어보고, 이동과 설치 파일 보관은 기록을 남겨 되돌릴 수 있게 했습니다. 웹은 Django API와 Mac 브리지를 통해 분류 대기, 명령 기록, 복구 상태를 보여 줍니다."],
+   ["설계에서 배운 점", "파일 속 지시문을 실행 지침으로 받아들이지 않도록 입력을 검증하고, 모델이 직접 삭제나 셸 명령을 수행하지 않게 권한을 나눴습니다. 모델 판단과 사람이 확인할 수 있는 실행 기록을 함께 다루는 경험이었습니다."]
+  ],
+  "note": "저장소의 구현 및 시연 문서를 기준으로 정리했습니다. 실제 Mac 폴더와 iCloud 계정은 연결·권한 설정이 필요하며, 서비스 규모의 운영 성능은 주장하지 않습니다.",
+  "links": [["프로젝트 코드와 시연", "https://github.com/molba2see/KCC_agent"]],
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "에이전트 시연",
+  "outcome": "캡처·강의자료 분류, 사용자 승인과 되돌리기, 웹 상태 연결"
+ },
+ {
+  "id": "hymate",
+  "type": "software",
+  "art": "vehicle",
+  "label": "VEHICLE APP / CONTEXTUAL FEEDBACK",
+  "title": "Hy! mate · 초보운전 동승 코치",
+  "subtitle": "차량 신호와 실도로 경로를 이용한 운전 연습 앱",
+  "date": "2026.11",
+  "status": "5인 팀 · 차량용 앱 구현",
+  "role": "앱 개발 · 차량 신호 기반 판정과 화면 구현",
+  "tags": ["Kotlin", "Jetpack Compose", "Pleos Vehicle SDK", "OSRM"],
+  "repo": "https://github.com/molba2see/Hymate",
+  "summary": "초보운전자가 혼자 운전할 때 차량 조작을 조용히 확인하고, 정차 중 피드백과 주차 후 리포트로 학습할 수 있도록 만든 차량용 앱입니다.",
+  "sections": [
+   ["문제 정의", "운전 연습에서 동승자의 조언이 사라지면 어떤 조작을 잘했는지, 놓쳤는지 알기 어렵습니다. 주행 중 화면 조작을 요구하지 않고 차량 데이터로 연습을 돕는 방식을 택했습니다."],
+   ["개인 기여", "5인 팀에서 앱 개발을 맡아 Kotlin·Jetpack Compose 화면과 차량 신호를 이용한 기능 구현에 참여했습니다. 기획·PO·PM 등 팀 역할과 구분해 기록합니다."],
+   ["주행과 피드백", "OSRM과 OpenStreetMap으로 실제 도로 경로를 탐색하고 회전·합류 지점을 판정에 연결했습니다. 방향지시등, 전조등, 와이퍼, 차속 등 수신 가능한 신호를 읽고, 정차 중 한 건의 음성 피드백과 주차 후 근거가 있는 리포트를 제공합니다."],
+   ["안전과 평가 범위", "주행 중에는 화면과 음성 개입을 제한합니다. 차량이 알 수 없는 상황이나 지원하지 않는 신호는 추측해 실패로 판정하지 않고 자가 확인으로 넘기며, 오판은 이의를 제기할 수 있도록 설계했습니다."]
+  ],
+  "note": "Pleos Connect Emulator에서 차량 신호를 조작하며 시연하는 프로젝트입니다. 실제 도로 주행이나 운전자 행동 개선 효과를 검증한 결과로 소개하지 않습니다.",
+  "links": [["앱 코드와 화면", "https://github.com/molba2see/Hymate"]],
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "차량용 앱 구현",
+  "outcome": "실도로 경로, 차량 신호 판정, 정차 피드백과 주행 리포트 구현"
  }
 ];
 const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const graphArt='<svg viewBox="0 0 450 150" aria-hidden="true"><g stroke="currentColor" opacity=".35" fill="none"><path d="M50 75L160 30L265 75L380 38L400 115L265 75L155 120L50 75L380 38M160 30L155 120M155 120L400 115"/></g><g fill="currentColor" opacity=".7"><circle cx="50" cy="75" r="7"/><circle cx="160" cy="30" r="6"/><circle cx="155" cy="120" r="6"/><circle cx="380" cy="38" r="8"/><circle cx="400" cy="115" r="7"/></g><circle cx="265" cy="75" r="24" fill="none" stroke="currentColor"/><circle cx="265" cy="75" r="6" fill="currentColor"/><circle cx="265" cy="75" r="40" fill="none" stroke="currentColor" stroke-dasharray="2 6" opacity=".4"/></svg>';
 const arts={match:graphArt,research:graphArt,language:'<div class="art-word">SFT <span style="font-size:24px;opacity:.5">→</span> DPO<small>ALIGNING A CONVERSATION</small></div>',financial:'<svg viewBox="0 0 450 150" aria-hidden="true"><g fill="none" stroke="#b48457" opacity=".3"><path d="M45 125H405M45 90H405M45 55H405M45 20H405"/></g><path d="M45 105L100 80L155 95L215 60L275 65L335 33L405 20" fill="none" stroke="#ad5a26" stroke-width="2"/><g fill="#ad5a26"><circle cx="100" cy="80" r="4"/><circle cx="215" cy="60" r="4"/><circle cx="335" cy="33" r="4"/></g><text x="290" y="130" fill="#93623d" font-size="10" font-family="monospace">PERSONAL PORT COLOR</text></svg>',sign:'<svg viewBox="0 0 450 150" aria-hidden="true"><g fill="none" stroke="#bd7740"><path d="M225 47V86L189 120M225 86L256 120M225 58L187 75L152 37M225 58L263 78L297 44M152 37L142 21M152 37L153 16M152 37L165 20M297 44L290 26M297 44L300 22M297 44L312 29" stroke-width="2"/><circle cx="225" cy="29" r="17"/></g><g fill="#984c1a"><circle cx="225" cy="58" r="4"/><circle cx="187" cy="75" r="4"/><circle cx="263" cy="78" r="4"/><circle cx="225" cy="86" r="4"/><circle cx="152" cy="37" r="4"/><circle cx="297" cy="44" r="4"/></g><text x="28" y="84" font-size="11" fill="#92643c" font-family="monospace">LANGUAGE</text><text x="340" y="84" font-size="11" fill="#92643c" font-family="monospace">MOTION</text></svg>',customs:'<div class="art-word" style="color:#b76536">HS <span style="font-size:30px;opacity:.55">/</span> Code<small>FROM DESCRIPTION TO CLASSIFICATION</small></div>',software:'<div class="art-word" style="color:#a36527">Portfolio OS<small>ONE RECORD, MANY POSSIBILITIES</small></div>'};
+arts.moa='<div class="art-word" style="color:#a36527">모아<small>LOCAL FILES · HUMAN APPROVAL</small></div>';
+arts.vehicle='<div class="art-word" style="color:#9a4d25">Hy! mate<small>VEHICLE SIGNAL · DRIVE REPORT</small></div>';
 const grid=document.querySelector('#project-grid');
 const renderCards = list => list.map((p,i)=>`<article class="project-card" data-type="${p.type}" data-competition="${!!p.competition}"><div class="project-art ${p.art}"><span class="art-label">${esc(p.label)}</span>${arts[p.art]}<span class="art-id">${p.kind==='research'?'RESEARCH':'PROJECT'} ${String(i+1).padStart(2,'0')}</span></div><div class="project-content"><div class="project-topline"><span>${esc(p.date)}</span><span class="status">${esc(p.status)}</span></div><h3>${esc(p.title)}</h3><p class="description">${esc(p.subtitle)}</p><p class="role-line"><b>기여</b>${esc(p.role)}</p><div class="outcome-box"><span>성과 · ${esc(p.outcome_kind)}</span><p>${esc(p.outcome)}</p></div><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div><div class="project-bottom"><button data-project="${p.id}" aria-label="${esc(p.title)} 상세 보기">프로젝트 읽기 <span>↗</span></button>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>`:'<span style="font-size:10px;color:var(--muted)">프로젝트 기록</span>'}</div></div></article>`).join('');
 grid.innerHTML=renderCards(projects.filter(p=>p.kind==='project'));
