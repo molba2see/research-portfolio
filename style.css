@@ -28,3 +28,15 @@ dialog h2{word-break:keep-all}
 /* Project artwork for the two 2026 additions. */
 .project-art.moa{background:linear-gradient(135deg,#fff0c8,#e8f0d3)}
 .project-art.vehicle{background:linear-gradient(135deg,#ffe1ba,#d9e9eb)}
+/* Working-paper and 2026 catalogue additions. */
+.project-art.mdae{background:linear-gradient(135deg,#ffe7a6,#f7cf86)}
+.project-art.feduf{background:linear-gradient(135deg,#ffe0c4,#f3c58f)}
+.project-art.musicrec{background:linear-gradient(135deg,#ffeab0,#ffd9b8)}
+.project-art.crawl{background:linear-gradient(135deg,#ffedc2,#e9e3c0)}
+.project-art.timetable{background:linear-gradient(135deg,#fff0c8,#ffe0b0)}
+.project-art.recreation{background:linear-gradient(135deg,#ffe4b8,#ffd0c0)}
+.project-art.xai6{background:linear-gradient(135deg,#ffe9b5,#f3d49a)}
+.project-art.xai7{background:linear-gradient(135deg,#ffe6b0,#f0cf95)}
+.project-art.cicd{background:linear-gradient(135deg,#ffedc2,#dfe6d0)}
+.project-art.recipe{background:linear-gradient(135deg,#ffe3a8,#ffd59a)}
+.project-art.blackjack{background:linear-gradient(135deg,#ffe9bd,#efd9a8)}

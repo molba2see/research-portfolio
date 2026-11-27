@@ -63,6 +63,57 @@ const projects = [
   "outcome": "캡스톤 금상 · 공개 팀 지표 기준 평균 추천 응답 약 1.8초"
  },
  {
+  "id": "mdae",
+  "type": "recommendation",
+  "art": "mdae",
+  "label": "WORKING PAPER / RECOMMENDATION",
+  "title": "MDAE · 양측 콜드스타트 추천 논문",
+  "subtitle": "마스킹 듀얼타워 오토엔코더로 인플루언서–제품 매칭",
+  "date": "2026 · 작성 중",
+  "status": "원고·실험·Figure 작업",
+  "role": "원고·평가 검토 · 모델 설명 · 발표와 Figure",
+  "tags": ["Masked Autoencoder", "Two-Tower", "BPR", "Cold-start"],
+  "repo": null,
+  "summary": "인플루언서와 제품 양측이 모두 신규인 콜드스타트 상황에서, 마스킹 듀얼타워 오토엔코더로 공유 표현을 학습해 매칭하는 추천 논문 작업입니다.",
+  "sections": [
+   ["연구 질문", "행동 로그가 거의 없는 신규 인플루언서와 신규 제품에도 텍스트·범주·수치 특성과 공유 투영으로 유효한 매칭 점수를 만들 수 있는지를 다룹니다."],
+   ["제안 개요 · 원고 기준", "수치·범주·텍스트 특성을 인코딩하는 듀얼타워에 마스킹 오토인코더를 결합하고, 두 개의 공유 projection과 양방향 BPR로 인플루언서↔제품 선호를 함께 학습하는 구조입니다."],
+   ["개인 기여", "한·영 원고 검토와 문단별 정리, 전처리·마스킹·공유 투영·양방향 BPR·평가 조건 설명, 모델 구조와 결과표 Figure 제작, 10분 발표와 패널토크 준비를 맡았습니다."],
+   ["산출물", "영어·한국어 원고, 그림 후보 19개와 편집용 자료, 고유 참고 논문 67편의 조사 기록을 정리했습니다. Cold–Cold 평가와 공유 projection은 현재 원고 기준으로 구분해 과거 초안 수치와 합산하지 않았습니다."]
+  ],
+  "note": "작성 중인 논문입니다. 저자 순서·투고처·심사·게재 여부는 확정하지 않았고, 파일명에 특정 학술지가 있다는 사실만으로 투고·접수를 단정하지 않았습니다. 수집 자료 기준 요약이며 실험을 재실행하지 않았습니다.",
+  "links": [],
+  "kind": "research",
+  "outcome_kind": "원고·Figure 작업",
+  "outcome": "한·영 원고와 그림 후보 19개·참고 논문 67편 정리, 발표·패널토크 준비 · 투고·게재 미확정"
+ },
+ {
+  "id": "feduf",
+  "type": "recommendation",
+  "art": "feduf",
+  "label": "WORKING PAPER / FEDERATED UNLEARNING",
+  "title": "FedUF · 연합 순차추천 언러닝 논문",
+  "subtitle": "탈퇴 사용자·삭제 구매의 흔적을 지우는 언러닝",
+  "date": "2026.10–11 · 작성 중",
+  "status": "원고·실험·선행연구 검토",
+  "role": "연구 자료·실험 결과 검토 · 문헌 조사 · 평가 해석",
+  "tags": ["Federated Learning", "SASRec", "Machine Unlearning", "Membership Inference"],
+  "repo": null,
+  "summary": "연합 순차추천 모델에서 탈퇴한 사용자나 삭제된 구매의 흔적을 줄이는 언러닝(FedUF, Federated Uprooting of Footprints) 연구입니다. 삭제 사용자의 기울기로 고른 아이템 임베딩과 시퀀스 인코더를 함께 편집하고 남은 사용자로 보수 학습합니다.",
+  "sections": [
+   ["연구 질문", "중앙 서버가 원본 데이터를 보지 못하는 연합 환경에서, 특정 사용자·구매 흔적을 전체 재학습 없이 제거하면서 남은 사용자 성능을 지킬 수 있는지를 다룹니다."],
+   ["제안 개요 · 원고 기준", "삭제 사용자의 기울기로 영향이 큰 아이템 임베딩 행을 고르고 시퀀스 인코더와 함께 편집한 뒤 남은 사용자로 보수적으로 재학습하는 흔적 기반 언러닝 절차입니다. 초기 원고 제목은 ‘Where Do Deleted Users Hide? …’이며 최종 제목은 미확정입니다."],
+   ["개인 기여", "제안서·사전등록·MAIN/MAIN2 실험과 추가 공격·대조 자료를 검토하고, 타깃 외 선행연구 조사, 연합학습 라운드·epoch, 공격 AUC 해석 등 평가 해석을 정리했습니다."],
+   ["평가 축 · 수치 비공개", "사용자 삭제 성공률, 망각까지의 정지 라운드, U-LiRA 같은 멤버십 추론 공격 AUC로 ‘잊었는지’를 측정하는 실험·분석이 있습니다. 구체 수치는 초안별로 달라 비공개 기록으로 두었고, 저장된 분석 보고서 기준이며 재실행하지 않았습니다."],
+   ["남은 쟁점", "약한 망각 기준의 빠른 회복과 재학습 모델과의 구별 불가능성은 다릅니다. 강한 공격·추가 학습 후 재부상, 로컬 다중 스텝, 구매 한 건 삭제에서의 한계가 남아 있습니다."]
+  ],
+  "note": "작성 중인 논문입니다. 코드 작성 분담·저자 등재·순서·투고 여부는 확정하지 않았고, 과거 초안의 저자 표기를 현재 저자 명단으로 간주하지 않았습니다. 저장된 분석·원고 자료 기준 요약입니다.",
+  "links": [],
+  "kind": "research",
+  "outcome_kind": "원고·실험 검토",
+  "outcome": "제안·사전등록·실험·선행연구로 이어지는 자료 검토와 평가 해석 · 저장된 분석 기준, 투고·게재 미확정"
+ },
+ {
   "id": "recommendation",
   "type": "recommendation",
   "art": "research",
@@ -721,6 +772,218 @@ const projects = [
   "kind": "project",
   "outcome_kind": "차량용 앱 구현",
   "outcome": "실도로 경로, 차량 신호 판정, 정차 피드백과 주행 리포트 구현"
+ },
+ {
+  "id": "musicrec",
+  "type": "recommendation",
+  "art": "musicrec",
+  "label": "RECOMMENDATION / MUSIC",
+  "title": "모여락 · 곡과 팀원 추천",
+  "subtitle": "곡 특성과 멤버 장르·악기를 잇는 규칙·MDAE 추천",
+  "date": "2026.11 · 작업 브랜치",
+  "status": "규칙 기반 API · MDAE 실험",
+  "role": "음악 추천 로직 · API · 추천 실험 기록",
+  "tags": ["CLAP", "MDAE", "Two-Tower", "FastAPI"],
+  "repo": "https://github.com/D-X-W-Service-2/moyeorock-ai",
+  "summary": "곡의 특성과 멤버의 장르·악기 선호를 연결해 개인 곡·팀 곡·팀원을 추천하는 API와, masked two-tower(MDAE) 음악 추천 실험 기록입니다.",
+  "sections": [
+   ["작업 범위", "기본 main 외 AI 작업 브랜치의 추천 API 문서와 mdae_music 실험 README를 확인했습니다. 25,062곡 장르 후보와 25,056곡 임시 난이도 특징을 추천 입력으로 다룹니다."],
+   ["추천 방식", "개인 곡·팀 곡·팀원 추천 API의 기본 순위는 규칙 방식이고, MDAE(마스킹 듀얼타워)는 실험 경로로 둡니다. 두 경로를 분리해 다뤘습니다."],
+   ["평가 범위", "2,000명 프로필과 행동 기록은 합성 자료이고, v1·v2·300 epoch 결과는 서로 다른 조건의 개발 점검입니다. 실제 사용자 추천 성능으로 쓰지 않았고, 현재 문서는 여러 조건에서 규칙 방식이 더 높다고 설명합니다."]
+  ],
+  "note": "작업 브랜치의 최신 문서로 정리했습니다. main 병합·운영 배포로 간주하지 않았고, 드럼·건반 등 다른 팀원 파트까지 개인 구현으로 합산하지 않았습니다.",
+  "links": [["음악 AI 작업 브랜치", "https://github.com/D-X-W-Service-2/moyeorock-ai/tree/codex/backend-ai-api-20261111"]],
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "추천 API · 실험",
+  "outcome": "개인·팀 곡과 팀원 추천 API 및 MDAE 음악 추천 실험 구성 · 합성 데이터 기준"
+ },
+ {
+  "id": "crawling",
+  "type": "software",
+  "art": "crawl",
+  "label": "DATA ENGINEERING / CRAWLING",
+  "title": "라프디 다중 플랫폼 크롤링",
+  "subtitle": "인스타·유튜브·네이버 블로그를 한 스키마로 수집",
+  "date": "2026 · 회사 프로젝트",
+  "status": "코드 비공개",
+  "role": "플랫폼별 수집기 · URL 정규화 · 공통 스키마 · 재개 처리",
+  "tags": ["Python", "Apify", "YouTube API", "Playwright"],
+  "repo": null,
+  "summary": "Instagram·YouTube·네이버 블로그의 프로필과 최근 게시물을 같은 구조로 수집하는 데이터 파이프라인입니다. Link:D 매칭 서비스의 후속 데이터 작업을 데이터 엔지니어링 관점에서 분리해 기록했습니다.",
+  "sections": [
+   ["구현", "crawling.py와 common.py로 공통 흐름을 두고 instagram_crawler·youtube_crawler·naver_blog_crawler를 분리했습니다. URL 정규화와 공통 결과 스키마, 중간 저장과 done·error 출력 경로를 구성했습니다."],
+   ["기록 범위", "회사 저장소의 최신 README와 서비스 문서를 대조했습니다. 실제 API 키와 원본 개인 데이터는 포함하지 않았습니다."]
+  ],
+  "note": "비공개 회사 저장소의 구조와 문서를 근거로 요약했습니다. 고객 데이터·키·운영 성능은 포함·검증하지 않았습니다.",
+  "links": [["수집·전처리 코드 · 비공개", "https://github.com/yujalabs-dev/lafd-data-processing"]],
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "데이터 파이프라인",
+  "outcome": "3개 플랫폼 수집기, URL 정규화·공통 스키마·재개 처리와 오류 출력 경로 구성"
+ },
+ {
+  "id": "timetable",
+  "type": "software",
+  "art": "timetable",
+  "label": "SOFTWARE / WEB APP",
+  "title": "강의 시간표 빌더",
+  "subtitle": "강의 엑셀을 검색해 장바구니·시간표로 배치",
+  "date": "2026 · 개인 웹 앱",
+  "status": "개인 프로젝트",
+  "role": "강의 엑셀 처리 · 시간표·장바구니 UI",
+  "tags": ["React", "Vite", "XLSX"],
+  "repo": "https://github.com/molba2see/timetable",
+  "summary": "강의 파일의 분반 데이터를 검색하고 여러 장바구니와 시간표에 배치하는 웹 앱입니다.",
+  "sections": [
+   ["구현한 기능", "다중 Excel 업로드와 분반 정규화, 복수 장바구니, 겹치는 시간 차단, 총 학점 계산, 패널 크기 조절을 코드에서 확인했습니다."]
+  ],
+  "note": "저장소 코드를 근거로 정리했으며 이번에 앱 실행·사용자 검증을 새로 수행하지 않았습니다.",
+  "links": [["코드", "https://github.com/molba2see/timetable"]],
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "웹 앱 구현",
+  "outcome": "엑셀 다중 업로드·분반 정규화·시간 충돌 차단·총 학점 계산 구현"
+ },
+ {
+  "id": "recreation",
+  "type": "software",
+  "art": "recreation",
+  "label": "SOFTWARE / EVENT TOOL",
+  "title": "레크레이션 퀴즈·행사 도구",
+  "subtitle": "인물·음악·영상 문제와 팀 점수판",
+  "date": "2026 · 행사 운영",
+  "status": "HTML·React 두 버전",
+  "role": "퀴즈 UI · 오디오·영상 진행 · 팀 점수 관리",
+  "tags": ["React", "TypeScript", "YouTube", "CSV"],
+  "repo": "https://github.com/molba2see/exaiting",
+  "summary": "인물·음악·영상 문제와 팀 점수판을 연결한 행사 진행용 웹 도구입니다. 초기 HTML 버전과 React·TypeScript 버전이 있습니다.",
+  "sections": [
+   ["구현", "퀴즈, 음악·영상 재생, 배경음악, CSV 문제 처리와 팀 점수 저장 모듈을 두 저장소에서 확인했습니다."],
+   ["버전 관리", "유사한 용도의 별도 코드를 같은 프로젝트의 관련 버전으로 묶었고, 정확한 계보·기여 분담은 추정하지 않았습니다."]
+  ],
+  "note": "행사 운영용 구현 기록이며 실제 이용자 수·운영 성과는 확인하지 않았습니다.",
+  "links": [["확장 버전", "https://github.com/molba2see/exaiting"], ["초기 버전", "https://github.com/molba2see/Recreation"]],
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "행사 도구 구현",
+  "outcome": "퀴즈·미디어 진행과 CSV 문제·팀 점수 관리 도구 구현 · 두 버전"
+ },
+ {
+  "id": "xai7",
+  "type": "language",
+  "art": "xai7",
+  "label": "MODEL IMPLEMENTATION / STUDY",
+  "title": "X:AI 7기 · Attention~YOLO 구현",
+  "subtitle": "기초 논문 구현을 본인 경로에 정리",
+  "date": "2026 · 학회 세션",
+  "status": "논문 구현·학습 자료",
+  "role": "TEAM D / Eunjin_Lee 경로",
+  "tags": ["Attention", "Transformer", "U-Net", "YOLO"],
+  "repo": "https://github.com/X-AI-eXtension-Artificial-Intelligence/7th-BASE-SESSION",
+  "summary": "X:AI 학회 Base 세션의 기초 논문 구현을 Attention·Transformer·U-Net·YOLO 경로로 정리한 학습 자료입니다.",
+  "sections": [
+   ["개인 경로", "TEAM D/Attention·Transformer·U-net·YOLO/Eunjin_Lee 경로를 확인했습니다. 경로별 README와 모델·학습·평가 파일의 유무를 구분했고, 문서만 있는 경로까지 완성 모델로 계산하지 않았습니다."]
+  ],
+  "note": "학회 학습용 구현·문서 기록입니다. 검증된 성능으로 제시하지 않았습니다.",
+  "links": [["학회 코드", "https://github.com/X-AI-eXtension-Artificial-Intelligence/7th-BASE-SESSION"]],
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "논문 구현 학습",
+  "outcome": "Attention·Transformer·U-Net·YOLO 구현·문서를 본인 경로로 정리"
+ },
+ {
+  "id": "xai6",
+  "type": "language",
+  "art": "xai6",
+  "label": "MODEL IMPLEMENTATION / STUDY",
+  "title": "X:AI 6기 · Transformer·U-Net 구현",
+  "subtitle": "기초 논문 구조 구현과 분할 학습",
+  "date": "2025 · 학회 세션",
+  "status": "논문 구현·학습",
+  "role": "TEAM A / 은진 경로의 학습·평가 코드",
+  "tags": ["Transformer", "U-Net", "PyTorch"],
+  "repo": "https://github.com/X-AI-eXtension-Artificial-Intelligence/6th-BASE-SESSION",
+  "summary": "X:AI 학회 Base 세션에서 기초 논문 구조를 구현하고 데이터 처리와 세포 이미지 분할 학습을 기록한 작업입니다.",
+  "sections": [
+   ["개인 경로", "TEAM A/Transformer/은진, TEAM A/UNet/은진 아래 구현을 확인했습니다. 학회 저장소 전체가 개인 작업이라는 뜻은 아니며 본인 경로만 연결했습니다."],
+   ["남은 기록", "U-Net README에 60 epoch 평균 Dice 0.2416, IoU 0.1537이 남아 있습니다. 이번에 재측정한 성능은 아닙니다."]
+  ],
+  "note": "학회 학습용 구현 기록입니다. 재측정·완성 모델 성능으로 제시하지 않았습니다.",
+  "links": [["학회 코드", "https://github.com/X-AI-eXtension-Artificial-Intelligence/6th-BASE-SESSION"]],
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "논문 구현 학습",
+  "outcome": "Transformer·U-Net 구현과 분할 학습 기록 · 본인 경로"
+ },
+ {
+  "id": "cicd",
+  "type": "software",
+  "art": "cicd",
+  "label": "CLOUD / CI·CD PRACTICE",
+  "title": "Flask·Docker CI/CD 실습",
+  "subtitle": "컨테이너와 GitHub Actions 배포 워크플로우",
+  "date": "2026 · 클라우드 실습",
+  "status": "코드 비공개",
+  "role": "웹 앱·컨테이너·배포 워크플로우",
+  "tags": ["Flask", "Docker", "GitHub Actions"],
+  "repo": null,
+  "summary": "Flask 예제 앱을 컨테이너로 구성하고 GitHub Actions 워크플로우를 둔 CI/CD 실습입니다.",
+  "sections": [
+   ["구현", "소유자·컨테이너 ID·버전을 보여 주는 루트 페이지와 /health API, Dockerfile·requirements·.github/workflows를 확인했습니다."]
+  ],
+  "note": "워크플로우 존재를 기준으로 수집했고 현재 배포 성공 여부는 새로 검증하지 않았습니다.",
+  "links": [["실습 코드 · 비공개", "https://github.com/molba2see/myapp-cicd-40"]],
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "CI/CD 실습",
+  "outcome": "Flask 앱 컨테이너화와 GitHub Actions 워크플로우 구성"
+ },
+ {
+  "id": "recipe",
+  "type": "software",
+  "art": "recipe",
+  "label": "SOFTWARE / WEB",
+  "title": "야끼소바 레시피 웹",
+  "subtitle": "인분 조절·재료 체크가 되는 레시피 사이트",
+  "date": "2026.10 · 개인 웹",
+  "status": "개인 프로젝트",
+  "role": "레시피 화면 · 인분 조절·재료 체크",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "repo": "https://github.com/molba2see/yakisoba-recipe",
+  "summary": "팬 하나로 만드는 야끼소바 조리 과정을 보여 주는 레시피 사이트입니다. 인분 조절과 재료 체크 기능이 있습니다.",
+  "sections": [
+   ["구현", "index.html·script.js·style.css와 배포 워크플로우를 수집했습니다. 인분 조절과 재료 체크 기능을 설명한 코드입니다."]
+  ],
+  "note": "저장소 구성을 근거로 정리했으며 브라우저 동작 확인은 수행하지 않았습니다.",
+  "links": [["코드", "https://github.com/molba2see/yakisoba-recipe"]],
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "웹 구현",
+  "outcome": "인분 조절·재료 체크 레시피 웹 구현"
+ },
+ {
+  "id": "blackjack",
+  "type": "software",
+  "art": "blackjack",
+  "label": "PYTHON / LEARNING",
+  "title": "블랙잭·숫자 맞히기 (Python 학습)",
+  "subtitle": "카드 규칙과 승패 비교를 구현한 콘솔 게임",
+  "date": "2024 · 학습 프로젝트",
+  "status": "학습·협업",
+  "role": "eunjin.py · 은진.py 구현",
+  "tags": ["Python", "CLI", "Game"],
+  "repo": "https://github.com/molba2see/udemy",
+  "summary": "카드 배분, 에이스 점수 조정, 딜러 규칙과 승패 비교를 구현한 콘솔 블랙잭과 숫자 맞히기 초기 프로그래밍 학습입니다.",
+  "sections": [
+   ["개인 코드", "협업 저장소의 eunjin.py와 udemy/blackjack·number/은진.py가 있습니다. eunjin.py에서 deal_card·calculate_score·compare·play_game을 확인했습니다."]
+  ],
+  "note": "독창적 알고리즘 연구가 아니라 초기 프로그래밍 학습 기록으로 보존합니다.",
+  "links": [["개인 학습 코드", "https://github.com/molba2see/udemy"], ["협업 코드", "https://github.com/Taekeun-Prince-And-Siyeon-Princess/BlackJackGameProject"]],
+  "competition": false,
+  "kind": "project",
+  "outcome_kind": "학습 구현",
+  "outcome": "콘솔 블랙잭(카드·점수·딜러 규칙·승패)과 숫자 맞히기 구현"
  }
 ];
 const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -728,6 +991,17 @@ const graphArt='<svg viewBox="0 0 450 150" aria-hidden="true"><g stroke="current
 const arts={match:graphArt,research:graphArt,language:'<div class="art-word">SFT <span style="font-size:24px;opacity:.5">→</span> DPO<small>ALIGNING A CONVERSATION</small></div>',financial:'<svg viewBox="0 0 450 150" aria-hidden="true"><g fill="none" stroke="#b48457" opacity=".3"><path d="M45 125H405M45 90H405M45 55H405M45 20H405"/></g><path d="M45 105L100 80L155 95L215 60L275 65L335 33L405 20" fill="none" stroke="#ad5a26" stroke-width="2"/><g fill="#ad5a26"><circle cx="100" cy="80" r="4"/><circle cx="215" cy="60" r="4"/><circle cx="335" cy="33" r="4"/></g><text x="290" y="130" fill="#93623d" font-size="10" font-family="monospace">PERSONAL PORT COLOR</text></svg>',sign:'<svg viewBox="0 0 450 150" aria-hidden="true"><g fill="none" stroke="#bd7740"><path d="M225 47V86L189 120M225 86L256 120M225 58L187 75L152 37M225 58L263 78L297 44M152 37L142 21M152 37L153 16M152 37L165 20M297 44L290 26M297 44L300 22M297 44L312 29" stroke-width="2"/><circle cx="225" cy="29" r="17"/></g><g fill="#984c1a"><circle cx="225" cy="58" r="4"/><circle cx="187" cy="75" r="4"/><circle cx="263" cy="78" r="4"/><circle cx="225" cy="86" r="4"/><circle cx="152" cy="37" r="4"/><circle cx="297" cy="44" r="4"/></g><text x="28" y="84" font-size="11" fill="#92643c" font-family="monospace">LANGUAGE</text><text x="340" y="84" font-size="11" fill="#92643c" font-family="monospace">MOTION</text></svg>',customs:'<div class="art-word" style="color:#b76536">HS <span style="font-size:30px;opacity:.55">/</span> Code<small>FROM DESCRIPTION TO CLASSIFICATION</small></div>',software:'<div class="art-word" style="color:#a36527">Portfolio OS<small>ONE RECORD, MANY POSSIBILITIES</small></div>'};
 arts.moa='<div class="art-word" style="color:#a36527">모아<small>LOCAL FILES · HUMAN APPROVAL</small></div>';
 arts.vehicle='<div class="art-word" style="color:#9a4d25">Hy! mate<small>VEHICLE SIGNAL · DRIVE REPORT</small></div>';
+arts.mdae='<div class="art-word" style="color:#a3561f">Dual-Tower AE<small>MASKED · BILATERAL COLD-START</small></div>';
+arts.feduf='<div class="art-word" style="color:#9a4d25">Unlearning<small>FEDERATED · FOOTPRINT REMOVAL</small></div>';
+arts.musicrec='<div class="art-word" style="color:#a85a24">♪ Rec<small>SONG × MEMBER MATCHING</small></div>';
+arts.crawl='<div class="art-word" style="color:#8f5a2a">Crawl<small>MULTI-PLATFORM · ONE SCHEMA</small></div>';
+arts.timetable='<div class="art-word" style="color:#a36527">Timetable<small>EXCEL → SCHEDULE</small></div>';
+arts.recreation='<div class="art-word" style="color:#a9521f">Quiz Night<small>EVENT · TEAM SCORES</small></div>';
+arts.xai6='<div class="art-word" style="color:#9a5a26">Transformer<small>X:AI 6TH · U-NET</small></div>';
+arts.xai7='<div class="art-word" style="color:#9a5a26">Attention<small>X:AI 7TH · TRANSFORMER·YOLO</small></div>';
+arts.cicd='<div class="art-word" style="color:#8f5a2a">CI / CD<small>FLASK · DOCKER · ACTIONS</small></div>';
+arts.recipe='<div class="art-word" style="color:#a85a24">Yakisoba<small>ONE-PAN RECIPE WEB</small></div>';
+arts.blackjack='<div class="art-word" style="color:#a36527">21<small>PYTHON LEARNING · CONSOLE GAME</small></div>';
 const grid=document.querySelector('#project-grid');
 const renderCards = list => list.map((p,i)=>`<article class="project-card" data-type="${p.type}" data-competition="${!!p.competition}"><div class="project-art ${p.art}"><span class="art-label">${esc(p.label)}</span>${arts[p.art]}<span class="art-id">${p.kind==='research'?'RESEARCH':'PROJECT'} ${String(i+1).padStart(2,'0')}</span></div><div class="project-content"><div class="project-topline"><span>${esc(p.date)}</span><span class="status">${esc(p.status)}</span></div><h3>${esc(p.title)}</h3><p class="description">${esc(p.subtitle)}</p><p class="role-line"><b>기여</b>${esc(p.role)}</p><div class="outcome-box"><span>성과 · ${esc(p.outcome_kind)}</span><p>${esc(p.outcome)}</p></div><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div><div class="project-bottom"><button data-project="${p.id}" aria-label="${esc(p.title)} 상세 보기">프로젝트 읽기 <span>↗</span></button>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>`:'<span style="font-size:10px;color:var(--muted)">프로젝트 기록</span>'}</div></div></article>`).join('');
 grid.innerHTML=renderCards(projects.filter(p=>p.kind==='project'));
