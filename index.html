@@ -15,7 +15,7 @@
 <header class="site-header">
  <a class="wordmark" href="#home" aria-label="이은진 홈"><span class="monogram">el<span>•</span></span><span>EUNJIN LEE<small>RESEARCH PORTFOLIO</small></span></a>
  <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">메뉴 <span>☰</span></button>
- <nav id="nav" aria-label="주 메뉴"><a href="#research">Research</a><a href="#projects">Projects</a><a href="#activities">Activities</a><a href="#contact" class="nav-contact">Contact <span>↗</span></a></nav>
+ <nav id="nav" aria-label="주 메뉴"><a href="#work">Projects</a><a href="#work" data-gototab="research">Research</a><a href="#activities">Activities</a><a href="#contact" class="nav-contact">Contact <span>↗</span></a></nav>
 </header>
 <main id="main">
  <section class="hero wrap" id="home">
@@ -43,31 +43,36 @@
   </div>
  </section>
 
- <section class="section wrap research-experience-section" id="research-experience">
-  <div class="section-heading"><div><p class="eyebrow">02 / RESEARCH & PAPERS</p><h2>논문과 연구 경험</h2></div><p>작성 중인 논문과 선행연구 재현·비교 평가.<br>검증한 범위와 남은 질문을 함께 기록합니다.</p></div>
-  <div class="project-grid" id="research-experience-grid"></div>
- </section>
-
- <section class="section projects-section" id="projects"><div class="wrap">
-  <div class="section-heading"><div><p class="eyebrow">03 / PROJECT EXPERIENCE</p><h2>프로젝트 이력과 성과</h2></div><p>문제 정의, 개인 기여, 결과와 한계.<br>공개·비공개 코드와 대회 기록을 함께 정리했습니다.</p></div>
-  <div class="project-toolbar"><div class="filters" role="group" aria-label="프로젝트 분야 필터"><button class="active" data-filter="all" aria-pressed="true">전체 <span>22</span></button><button data-filter="recommendation" aria-pressed="false">추천시스템</button><button data-filter="language" aria-pressed="false">언어모델</button><button data-filter="analysis" aria-pressed="false">데이터 분석</button><button data-filter="software" aria-pressed="false">소프트웨어</button><button data-filter="competition" aria-pressed="false">대회·공모전</button></div><span id="project-count" aria-live="polite">22 projects</span></div>
-  <div class="project-grid" id="project-grid"></div>
+ <section class="section projects-section" id="work"><div class="wrap">
+  <div class="section-heading"><div><p class="eyebrow">02 / PROJECTS & RESEARCH</p><h2>프로젝트와 연구</h2></div><p>구분·성과·팀 구성과 내 역할,<br>핵심 기능과 트러블슈팅까지 정리했습니다.</p></div>
+  <div class="work-tabs" role="tablist" aria-label="프로젝트와 연구 전환">
+   <button role="tab" id="tab-projects" class="active" data-tab="projects" aria-selected="true" aria-controls="projects-panel">프로젝트 <span>22</span></button>
+   <button role="tab" id="tab-research" data-tab="research" aria-selected="false" aria-controls="research-panel">연구·논문 <span>3</span></button>
+  </div>
+  <div id="projects-panel" role="tabpanel" aria-labelledby="tab-projects">
+   <div class="project-toolbar"><div class="filters" role="group" aria-label="프로젝트 분야 필터"><button class="active" data-filter="all" aria-pressed="true">전체 <span>22</span></button><button data-filter="recommendation" aria-pressed="false">추천시스템</button><button data-filter="language" aria-pressed="false">언어모델</button><button data-filter="analysis" aria-pressed="false">데이터 분석</button><button data-filter="software" aria-pressed="false">소프트웨어</button><button data-filter="competition" aria-pressed="false">대회·공모전</button></div><span id="project-count" aria-live="polite">22 projects</span></div>
+   <div class="project-grid" id="project-grid"></div>
+  </div>
+  <div id="research-panel" role="tabpanel" aria-labelledby="tab-research" hidden>
+   <p class="panel-intro">작성 중인 논문과 선행연구 재현·비교 평가입니다. 투고·게재 상태는 미확정으로 표기했습니다.</p>
+   <div class="project-grid" id="research-experience-grid"></div>
+  </div>
  </div></section>
 
  <section class="section wrap evidence-section" id="experiments">
-  <div class="section-heading"><div><p class="eyebrow">04 / EXPERIMENT NOTE</p><h2>결과를 기록하고,<br>조건을 함께 읽습니다.</h2></div><p>추천 베이스라인의 저장된 단일 실행 기록.<br>수치의 차이와 실험의 범위를 함께 살펴봅니다.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">03 / EXPERIMENT NOTE</p><h2>결과를 기록하고,<br>조건을 함께 읽습니다.</h2></div><p>추천 베이스라인의 저장된 단일 실행 기록.<br>수치의 차이와 실험의 범위를 함께 살펴봅니다.</p></div>
   <div class="experiment-layout"><div class="experiment-info"><span class="note-label">LINKD_DATA · 2026.08.10</span><h3>추천 베이스라인 비교</h3><p>이 실행에서는 BPR의 Recall@5와 NDCG@5가 다른 두 모델보다 높았습니다. 특정 실행의 관찰이며, 모델의 일반적인 우열을 의미하지 않습니다.</p><dl><div><dt>기본 분할 설정</dt><dd>사용자별 80 / 10 / 10</dd></div><div><dt>기본 평가 설정</dt><dd>uni20 · seed 2020</dd></div><div><dt>모델 선택 지표</dt><dd>Recall@5</dd></div></dl><p class="fine-print">저장소 기본 설정 기준이며 실행 시 변경될 수 있습니다. 반복 시드 평균이나 전체 후보 랭킹 결과와 직접 비교하지 않습니다.</p><a class="inline-link" href="https://github.com/molba2see/RecBole/blob/main/results/full_run_retry/model_results.csv" target="_blank" rel="noopener noreferrer">원본 결과 CSV ↗</a></div>
    <div class="chart-panel"><div class="chart-header"><span>TEST SCORE</span><div class="metric-switch" role="group" aria-label="평가 지표 선택"><button class="active" data-metric="recall" aria-pressed="true">Recall@5</button><button data-metric="ndcg" aria-pressed="false">NDCG@5</button><button data-metric="mrr" aria-pressed="false">MRR@5</button></div></div><div id="chart" class="bars" aria-live="polite"></div><div class="chart-axis"><span>0.00</span><span>0.15</span><span>0.30</span></div><p class="chart-caption">TEST · THREE BASELINES · SINGLE RUN</p></div>
   </div>
  </section>
 
  <section class="section journey-section" id="journey"><div class="wrap journey-layout">
-  <div class="journey-intro"><p class="eyebrow">05 / JOURNEY</p><h2>배우고, 만들고,<br>함께 성장해 왔습니다.</h2><p>AI빅데이터융합경영학과와 소프트웨어 복수전공을 바탕으로, 학회 프로젝트에서 산학협력과 연구 실험까지 경험을 넓혔습니다.</p><a class="inline-link" href="#activities">학회 활동과 자격증 자세히 보기 ↓</a></div>
+  <div class="journey-intro"><p class="eyebrow">04 / JOURNEY</p><h2>배우고, 만들고,<br>함께 성장해 왔습니다.</h2><p>AI빅데이터융합경영학과와 소프트웨어 복수전공을 바탕으로, 학회 프로젝트에서 산학협력과 연구 실험까지 경험을 넓혔습니다.</p><a class="inline-link" href="#activities">학회 활동과 자격증 자세히 보기 ↓</a></div>
   <ol class="timeline"><li><time>2026</time><div><h3>산학협력에서 연구 실험으로</h3><p>Pickple 캡스톤 금상 팀 참여. 라프디 현장실습과 추천모델 재현·추론 모듈, AI 에이전트 개발. 모여락 음악 특징 분석과 한국수어 AI 파이프라인 구축.</p><span>RECOMMENDATION · DEPLOYMENT · ACCESSIBILITY</span></div></li><li><time>2025</time><div><h3>언어모델을 직접 학습하고 발표하다</h3><p>페르소나 파인튜닝, HS코드 챗봇, 날씨·해운물류·KOPIS 대회 참여, Personal Port Color 팀장. 손말사랑회 부회장 취임. X:AI Base·ADV 수강 후 운영진 기획 운영.</p><span>LLM · RESEARCH STUDY · TEAM LEAD</span></div></li><li><time>2024</time><div><h3>데이터 분석과 학회 운영</h3><p>손말사랑회 활동 시작. D&A Basic Session 수강과 Python 게임 구현 스터디. 2024년 11월부터 2025년 11월까지 홍보 팀장으로 활동.</p><span>DATA ANALYSIS · COMMUNITY</span></div></li><li><time>2023</time><div><h3>국민대학교 입학</h3><p>AI빅데이터융합경영학과 입학. 국민대학교 입학처 드림멘토 10기 활동을 2025년 2월까지 이어갔습니다.</p><span>EDUCATION · MENTORING</span></div></li></ol>
  </div></section>
 
  <section class="section wrap activities-section" id="activities" aria-labelledby="activities-title">
-  <div class="section-heading"><div><p class="eyebrow">06 / ACTIVITIES & CERTIFICATIONS</p><h2 id="activities-title">함께 배우는 커뮤니티,<br>꾸준히 쌓은 기초 역량.</h2></div><p>학회 운영과 대외 활동,<br>데이터와 SQL의 기초를 다진 자격 이력입니다.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">05 / ACTIVITIES & CERTIFICATIONS</p><h2 id="activities-title">함께 배우는 커뮤니티,<br>꾸준히 쌓은 기초 역량.</h2></div><p>학회 운영과 대외 활동,<br>데이터와 SQL의 기초를 다진 자격 이력입니다.</p></div>
   <div class="activity-grid">
    <article class="activity-card"><span class="mini-label">SIGN LANGUAGE COMMUNITY</span><h3>손말사랑회</h3><p class="activity-org">수어동아리</p><span class="activity-role">부회장 · 2년 임기</span><time>2024년부터 활동 · 2025년부터 부회장</time><p class="activity-description">수어동아리 활동을 꾸준히 이어오며 부회장을 맡고 있습니다. 한국수어 AI 프로젝트와 함께 수어에 대한 관심과 대학생활을 소개합니다.</p><div class="tags"><span>수어</span><span>동아리 부회장</span></div></article>
    <article class="activity-card"><span class="mini-label">AI COMMUNITY</span><h3>X:AI</h3><p class="activity-org">국민대학교 인공지능 학회</p><span class="activity-role">운영진 · 기획 운영</span><time datetime="2025-11-16">2025.11.16 – 현재</time><p class="activity-description">Base·ADV 세션 참여에 이어 운영진으로 기획 운영을 맡고 있습니다. 학회 프로젝트에서는 페르소나 파인튜닝과 최종 발표를 경험했습니다.</p><div class="tags"><span>학회 운영</span><span>AI 프로젝트</span></div></article>
@@ -82,7 +87,7 @@
   </div>
  </section>
 
- <section class="section wrap documents-section" id="documents"><div><p class="eyebrow">07 / DOCUMENTS</p><h2>자세한 기록은 문서로</h2><p>프로젝트별 연구 질문과 기여를 담은 포트폴리오,<br>학력과 경험을 정리한 CV를 내려받을 수 있습니다.<br><small>연구 포트폴리오 PDF는 10월 10일 갱신본입니다. CV와 Word 파일은 10월 9일 작성본입니다.</small></p></div><div class="document-list"><article><span class="file-icon">PDF</span><div><h3>연구 포트폴리오</h3><p>15쪽 · PDF 2026.10.10 / Word 2026.10.09</p></div><div><a href="assets/research-portfolio.pdf" download aria-label="연구 포트폴리오 PDF 다운로드">PDF ↓</a><a href="assets/research-portfolio.docx" download aria-label="연구 포트폴리오 Word 다운로드">Word ↓</a></div></article><article><span class="file-icon">CV</span><div><h3>연구 CV</h3><p>2쪽 · 2026.10.09 작성본</p></div><div><a href="assets/research-cv.pdf" download aria-label="연구 CV PDF 다운로드">PDF ↓</a><a href="assets/research-cv.docx" download aria-label="연구 CV Word 다운로드">Word ↓</a></div></article></div></section>
+ <section class="section wrap documents-section" id="documents"><div><p class="eyebrow">06 / DOCUMENTS</p><h2>자세한 기록은 문서로</h2><p>프로젝트별 연구 질문과 기여를 담은 포트폴리오,<br>학력과 경험을 정리한 CV를 내려받을 수 있습니다.<br><small>연구 포트폴리오 PDF는 10월 10일 갱신본입니다. CV와 Word 파일은 10월 9일 작성본입니다.</small></p></div><div class="document-list"><article><span class="file-icon">PDF</span><div><h3>연구 포트폴리오</h3><p>15쪽 · PDF 2026.10.10 / Word 2026.10.09</p></div><div><a href="assets/research-portfolio.pdf" download aria-label="연구 포트폴리오 PDF 다운로드">PDF ↓</a><a href="assets/research-portfolio.docx" download aria-label="연구 포트폴리오 Word 다운로드">Word ↓</a></div></article><article><span class="file-icon">CV</span><div><h3>연구 CV</h3><p>2쪽 · 2026.10.09 작성본</p></div><div><a href="assets/research-cv.pdf" download aria-label="연구 CV PDF 다운로드">PDF ↓</a><a href="assets/research-cv.docx" download aria-label="연구 CV Word 다운로드">Word ↓</a></div></article></div></section>
 
  <section class="contact-section" id="contact"><div class="wrap"><p class="eyebrow">LET’S CONNECT</p><h2>연구에 관한 대화를<br>기다립니다.</h2><p>추천시스템, 언어모델, 접근성을 위한 AI에 관심이 있습니다.</p><div class="contact-actions"><a href="mailto:molba2see@gmail.com">molba2see@gmail.com <span>↗</span></a><button id="copy-email">이메일 복사</button><span id="copy-status" role="status"></span></div><a class="contact-github" href="https://github.com/molba2see" target="_blank" rel="noopener noreferrer">GitHub / molba2see ↗</a></div></section>
 </main>

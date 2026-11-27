@@ -1,6 +1,44 @@
 const projects = [
  {
   "id": "match",
+  "category": "캡스톤 · 팀 프로젝트",
+  "result": "2026 국민대학교 소프트웨어융합대학 캡스톤 디자인 금상 · 공개 팀 지표 프로필 5,488 / 게시물 65,612 · 평균 추천 응답 약 1.8초",
+  "benefitName": "Link:D Match — 상품에 맞는 인플루언서를 자동으로 찾아 잇는 매칭",
+  "teamSize": "5인 팀 (Pickple)",
+  "myRole": "추천 점수 산출 · 인플루언서 데이터 수집 · 행동 로그 수집과 가중합 · AWS 배포",
+  "skills": [
+   "BGE-M3",
+   "LightFM",
+   "FastAPI",
+   "AWS",
+   "Python"
+  ],
+  "problem": "쇼핑몰은 상품에 맞는 인플루언서를 일일이 탐색하고 비교해야 합니다. 상품의 특성과 인플루언서 콘텐츠의 적합도를 연결해 이 탐색 부담을 줄이는 서비스를 만들었습니다.",
+  "impact": "쇼핑몰이 인플루언서를 찾는 탐색·비교 시간을 줄여 마케팅 매칭 비용을 낮추는 방향입니다. 의미적 적합도·영향력·사용자 선호를 함께 반영해 소규모 셀러도 맞는 인플루언서를 찾도록 돕는 것을 목표로 했습니다. (구체 비용 절감 수치는 미측정)",
+  "features": [
+   [
+    "의미 기반 매칭",
+    "상품 설명을 BGE-M3로 임베딩하고 인플루언서 콘텐츠와의 의미적 유사도를 계산합니다."
+   ],
+   [
+    "점수 결합 랭킹",
+    "영향력·벡터 유사도·LightFM 개인화 점수를 가중합하고, 밴딧 기반으로 가중치를 조정해 추천 API로 제공합니다."
+   ],
+   [
+    "행동 로그 반영",
+    "클릭 등 행동 로그를 수집해 추천 가중합에 반영하는 경로를 구성했습니다."
+   ]
+  ],
+  "troubleshooting": [
+   [
+    "임베딩 모델 OOM 대응",
+    "임베딩 모델이 메모리 부족(OOM)으로 중단되는 문제에 스왑, 배치 축소, 경량화와 저장 경로 조정을 검토해 서버 배포를 완료했습니다."
+   ],
+   [
+    "배포·도메인 구성",
+    "비공개 후속 저장소에서 HTTPS 인증서·도메인 연결과 프로젝트 구조 문서화를 진행했습니다."
+   ]
+  ],
   "type": "recommendation",
   "art": "match",
   "label": "RECOMMENDATION / DEPLOYMENT",
@@ -72,14 +110,31 @@ const projects = [
   "date": "2026 · 작성 중",
   "status": "원고·실험·Figure 작업",
   "role": "원고·평가 검토 · 모델 설명 · 발표와 Figure",
-  "tags": ["Masked Autoencoder", "Two-Tower", "BPR", "Cold-start"],
+  "tags": [
+   "Masked Autoencoder",
+   "Two-Tower",
+   "BPR",
+   "Cold-start"
+  ],
   "repo": null,
   "summary": "인플루언서와 제품 양측이 모두 신규인 콜드스타트 상황에서, 마스킹 듀얼타워 오토엔코더로 공유 표현을 학습해 매칭하는 추천 논문 작업입니다.",
   "sections": [
-   ["연구 질문", "행동 로그가 거의 없는 신규 인플루언서와 신규 제품에도 텍스트·범주·수치 특성과 공유 투영으로 유효한 매칭 점수를 만들 수 있는지를 다룹니다."],
-   ["제안 개요 · 원고 기준", "수치·범주·텍스트 특성을 인코딩하는 듀얼타워에 마스킹 오토인코더를 결합하고, 두 개의 공유 projection과 양방향 BPR로 인플루언서↔제품 선호를 함께 학습하는 구조입니다."],
-   ["개인 기여", "한·영 원고 검토와 문단별 정리, 전처리·마스킹·공유 투영·양방향 BPR·평가 조건 설명, 모델 구조와 결과표 Figure 제작, 10분 발표와 패널토크 준비를 맡았습니다."],
-   ["산출물", "영어·한국어 원고, 그림 후보 19개와 편집용 자료, 고유 참고 논문 67편의 조사 기록을 정리했습니다. Cold–Cold 평가와 공유 projection은 현재 원고 기준으로 구분해 과거 초안 수치와 합산하지 않았습니다."]
+   [
+    "연구 질문",
+    "행동 로그가 거의 없는 신규 인플루언서와 신규 제품에도 텍스트·범주·수치 특성과 공유 투영으로 유효한 매칭 점수를 만들 수 있는지를 다룹니다."
+   ],
+   [
+    "제안 개요 · 원고 기준",
+    "수치·범주·텍스트 특성을 인코딩하는 듀얼타워에 마스킹 오토인코더를 결합하고, 두 개의 공유 projection과 양방향 BPR로 인플루언서↔제품 선호를 함께 학습하는 구조입니다."
+   ],
+   [
+    "개인 기여",
+    "한·영 원고 검토와 문단별 정리, 전처리·마스킹·공유 투영·양방향 BPR·평가 조건 설명, 모델 구조와 결과표 Figure 제작, 10분 발표와 패널토크 준비를 맡았습니다."
+   ],
+   [
+    "산출물",
+    "영어·한국어 원고, 그림 후보 19개와 편집용 자료, 고유 참고 논문 67편의 조사 기록을 정리했습니다. Cold–Cold 평가와 공유 projection은 현재 원고 기준으로 구분해 과거 초안 수치와 합산하지 않았습니다."
+   ]
   ],
   "note": "작성 중인 논문입니다. 저자 순서·투고처·심사·게재 여부는 확정하지 않았고, 파일명에 특정 학술지가 있다는 사실만으로 투고·접수를 단정하지 않았습니다. 수집 자료 기준 요약이며 실험을 재실행하지 않았습니다.",
   "links": [],
@@ -97,15 +152,35 @@ const projects = [
   "date": "2026.10–11 · 작성 중",
   "status": "원고·실험·선행연구 검토",
   "role": "연구 자료·실험 결과 검토 · 문헌 조사 · 평가 해석",
-  "tags": ["Federated Learning", "SASRec", "Machine Unlearning", "Membership Inference"],
+  "tags": [
+   "Federated Learning",
+   "SASRec",
+   "Machine Unlearning",
+   "Membership Inference"
+  ],
   "repo": null,
   "summary": "연합 순차추천 모델에서 탈퇴한 사용자나 삭제된 구매의 흔적을 줄이는 언러닝(FedUF, Federated Uprooting of Footprints) 연구입니다. 삭제 사용자의 기울기로 고른 아이템 임베딩과 시퀀스 인코더를 함께 편집하고 남은 사용자로 보수 학습합니다.",
   "sections": [
-   ["연구 질문", "중앙 서버가 원본 데이터를 보지 못하는 연합 환경에서, 특정 사용자·구매 흔적을 전체 재학습 없이 제거하면서 남은 사용자 성능을 지킬 수 있는지를 다룹니다."],
-   ["제안 개요 · 원고 기준", "삭제 사용자의 기울기로 영향이 큰 아이템 임베딩 행을 고르고 시퀀스 인코더와 함께 편집한 뒤 남은 사용자로 보수적으로 재학습하는 흔적 기반 언러닝 절차입니다. 초기 원고 제목은 ‘Where Do Deleted Users Hide? …’이며 최종 제목은 미확정입니다."],
-   ["개인 기여", "제안서·사전등록·MAIN/MAIN2 실험과 추가 공격·대조 자료를 검토하고, 타깃 외 선행연구 조사, 연합학습 라운드·epoch, 공격 AUC 해석 등 평가 해석을 정리했습니다."],
-   ["평가 축 · 수치 비공개", "사용자 삭제 성공률, 망각까지의 정지 라운드, U-LiRA 같은 멤버십 추론 공격 AUC로 ‘잊었는지’를 측정하는 실험·분석이 있습니다. 구체 수치는 초안별로 달라 비공개 기록으로 두었고, 저장된 분석 보고서 기준이며 재실행하지 않았습니다."],
-   ["남은 쟁점", "약한 망각 기준의 빠른 회복과 재학습 모델과의 구별 불가능성은 다릅니다. 강한 공격·추가 학습 후 재부상, 로컬 다중 스텝, 구매 한 건 삭제에서의 한계가 남아 있습니다."]
+   [
+    "연구 질문",
+    "중앙 서버가 원본 데이터를 보지 못하는 연합 환경에서, 특정 사용자·구매 흔적을 전체 재학습 없이 제거하면서 남은 사용자 성능을 지킬 수 있는지를 다룹니다."
+   ],
+   [
+    "제안 개요 · 원고 기준",
+    "삭제 사용자의 기울기로 영향이 큰 아이템 임베딩 행을 고르고 시퀀스 인코더와 함께 편집한 뒤 남은 사용자로 보수적으로 재학습하는 흔적 기반 언러닝 절차입니다. 초기 원고 제목은 ‘Where Do Deleted Users Hide? …’이며 최종 제목은 미확정입니다."
+   ],
+   [
+    "개인 기여",
+    "제안서·사전등록·MAIN/MAIN2 실험과 추가 공격·대조 자료를 검토하고, 타깃 외 선행연구 조사, 연합학습 라운드·epoch, 공격 AUC 해석 등 평가 해석을 정리했습니다."
+   ],
+   [
+    "평가 축 · 수치 비공개",
+    "사용자 삭제 성공률, 망각까지의 정지 라운드, U-LiRA 같은 멤버십 추론 공격 AUC로 ‘잊었는지’를 측정하는 실험·분석이 있습니다. 구체 수치는 초안별로 달라 비공개 기록으로 두었고, 저장된 분석 보고서 기준이며 재실행하지 않았습니다."
+   ],
+   [
+    "남은 쟁점",
+    "약한 망각 기준의 빠른 회복과 재학습 모델과의 구별 불가능성은 다릅니다. 강한 공격·추가 학습 후 재부상, 로컬 다중 스텝, 구매 한 건 삭제에서의 한계가 남아 있습니다."
+   ]
   ],
   "note": "작성 중인 논문입니다. 코드 작성 분담·저자 등재·순서·투고 여부는 확정하지 않았고, 과거 초안의 저자 표기를 현재 저자 명단으로 간주하지 않았습니다. 저장된 분석·원고 자료 기준 요약입니다.",
   "links": [],
@@ -237,7 +312,32 @@ const projects = [
   ],
   "kind": "project",
   "outcome_kind": "팀 비교 실험",
-  "outcome": "두 페르소나 × 세 학습 조건의 6개 모델 비교 · 일부 모델 학습과 최종 발표 담당"
+  "outcome": "두 페르소나 × 세 학습 조건의 6개 모델 비교 · 일부 모델 학습과 최종 발표 담당",
+  "category": "팀 프로젝트 · 학회",
+  "teamSize": "5인 팀",
+  "benefitName": "페르소나 파인튜닝 — 대화 내내 캐릭터를 일관되게 유지하는 모델",
+  "result": "학회 프로젝트 최종 발표 · 팀 내부 평가서 최종 채택 모델이 최고 총점·평균 순위 (외부 수상·사용자 지표 없음)",
+  "problem": "멀티턴 대화에서 모델이 서로 다른 두 페르소나를 일관되게 유지하도록, 프롬프트와 SFT·DPO 학습 조건을 비교했습니다.",
+  "features": [
+   [
+    "선호쌍 데이터 구성",
+    "AI Hub 한국어 대화를 정제하고 GPT-4o mini로 페르소나별 응답을 생성해 chosen/rejected 선호쌍을 만들었습니다."
+   ],
+   [
+    "6개 모델 비교",
+    "Ko-gemma 기반 두 페르소나 × 세 학습 조건(프롬프트·SFT·DPO)을 조합한 6개 모델을 비교했습니다."
+   ],
+   [
+    "평가 설계",
+    "8:1:1 분할·1,500개 평가 사례에 GPT-4o mini 평가(문맥·논리 30%, 문법 10%, 컨셉 유지 60%)와 사람 순위 평가를 적용했습니다."
+   ]
+  ],
+  "troubleshooting": [
+   [
+    "데이터 적합도 문제의식",
+    "데이터의 과제 적합도가 결과를 좌우한다는 점을 확인했고, 후속으로 평가자 편향·응답 길이·제시 순서 효과와 긴 대화 일반화를 검증 과제로 남겼습니다."
+   ]
+  ]
  },
  {
   "id": "ppc",
@@ -288,7 +388,33 @@ const projects = [
   ],
   "kind": "project",
   "outcome_kind": "서비스 시연 · 발표",
-  "outcome": "성향별 종목 보고서 생성 시연 · 4인 팀장으로 연합 컨퍼런스 발표"
+  "outcome": "성향별 종목 보고서 생성 시연 · 4인 팀장으로 연합 컨퍼런스 발표",
+  "category": "팀 프로젝트 · 학회 컨퍼런스",
+  "teamSize": "4인 팀 (팀장)",
+  "benefitName": "Personal Port Color — 투자 성향에 맞춰 종목 보고서를 만들어 주는 서비스",
+  "result": "D&A·X:AI·WINK 연합 컨퍼런스 발표 · 안정형·중립형·공격형 보고서 시연 (수상·사용자 지표 없음)",
+  "problem": "보유 종목과 수량으로 투자 성향을 분류하고, 뉴스·재무 정보를 연결해 종목별 보고서를 생성하는 서비스를 만들었습니다.",
+  "impact": "개인 투자자가 종목별 뉴스·재무 정보를 일일이 찾아 해석하는 부담을 줄이는 방향입니다. (투자 수익·판단 정확도는 검증하지 않음)",
+  "features": [
+   [
+    "데이터 수집·요약",
+    "Nasdaq100 티커 기반 Yahoo Finance 뉴스·재무 정보를 수집하고 뉴스 본문을 GPT API로 요약해 벡터 DB에 저장했습니다."
+   ],
+   [
+    "성향 분류",
+    "변동성·최대 낙폭·시장 민감도·산업 집중도 지표로 투자 성향을 분류했습니다."
+   ],
+   [
+    "보고서 생성",
+    "Llama-3-8B-Instruct에 성향·기업 정보·뉴스를 입력하고 보고서 구조를 지정해 생성했습니다."
+   ]
+  ],
+  "troubleshooting": [
+   [
+    "근거 일치 검증 과제",
+    "수치·인용 근거의 일치, 성향 조건 준수, 뉴스 시점 적절성을 따로 평가하고, 베이스/파인튜닝/검색결합 모델을 같은 조건에서 비교하는 것을 후속 과제로 정리했습니다."
+   ]
+  ]
  },
  {
   "id": "sign",
@@ -343,7 +469,27 @@ const projects = [
   ],
   "kind": "project",
   "outcome_kind": "파이프라인 구축 · 진행 중",
-  "outcome": "글로스 SFT·LoRA·RAG 및 모션 학습 경로 구축 · 성능 검증 진행 전"
+  "outcome": "글로스 SFT·LoRA·RAG 및 모션 학습 경로 구축 · 성능 검증 진행 전",
+  "category": "팀 프로젝트 · 진행 중",
+  "benefitName": "한국수어 AI — 한국어를 수어 글로스와 동작으로 잇는 접근성 파이프라인",
+  "problem": "한국어의 의미를 수어 글로스와 동작으로 연결하되, 언어 단계(단어 선택·어순)와 모션 단계(신체·손 표현)를 각각 검증할 수 있도록 파이프라인을 나눴습니다.",
+  "impact": "청각장애인을 위한 수어 접근성을 높이는 방향입니다. (완성된 아바타 서비스·정확도 성과는 아직 아님)",
+  "features": [
+   [
+    "언어 모듈",
+    "KETI-AIR/ke-t5-small 전체 SFT·LoRA 경로와 사전·유사 예시·문법서 RAG, 문법 자질 기반 검색과 유사 예시 제외 조건을 구성했습니다."
+   ],
+   [
+    "모션 모듈",
+    "수어용 VQ-VAE와 T5 LoRA 학습·추론 경로를 두고, 신체·양손 67개 키포인트의 2D/3D 좌표를 출력합니다."
+   ]
+  ],
+  "troubleshooting": [
+   [
+    "검증 계획",
+    "WER·Exact Match·token-F1으로 글로스 오류를 분석하고 검색 조건(없음·사전·예시·문법·전체)을 비교하며, 수어 사용자 검토로 동작 전달을 평가하는 것을 과제로 두었습니다."
+   ]
+  ]
  },
  {
   "id": "customs",
@@ -394,7 +540,27 @@ const projects = [
   "competition": true,
   "kind": "project",
   "outcome_kind": "챗봇 구현",
-  "outcome": "HS코드 분류 지원 챗봇 완성 · 파인튜닝과 UX 담당"
+  "outcome": "HS코드 분류 지원 챗봇 완성 · 파인튜닝과 UX 담당",
+  "category": "대회·공모전",
+  "benefitName": "HS코드 분류 챗봇 — 자연어 설명만으로 품목 HS코드를 찾아 주는 도우미",
+  "problem": "품목 분류에는 방대한 법 조항·판례 참고가 필요합니다. 사용자의 자연어 설명으로 HS코드 분류를 돕는 챗봇을 기획·구현했습니다.",
+  "impact": "수출입 실무자·비전공자가 복잡한 관세 분류를 쉽게 접근하도록 돕는 방향입니다.",
+  "features": [
+   [
+    "도메인 파인튜닝",
+    "법 조항·판례를 활용해 LLM을 파인튜닝하고 비전공자용 입력·UX를 설계했습니다."
+   ],
+   [
+    "공공데이터 설계",
+    "관세청 HS 부호·환율·품목별 수출입 수량·금액을 연결해 HS코드 추정, 예상 원가, 수입 추세 비교를 기획했습니다(원가·추세 비교는 기획 범위)."
+   ]
+  ],
+  "troubleshooting": [
+   [
+    "불충분 입력 처리 과제",
+    "HS코드 계층별 분류 정확도와 근거 문서 일치 평가, 입력이 불충분할 때 추가 질문을 생성하거나 판단을 유보하는 절차를 후속 과제로 정리했습니다."
+   ]
+  ]
  },
  {
   "id": "os",
@@ -436,7 +602,21 @@ const projects = [
   ],
   "kind": "project",
   "outcome_kind": "API 구현",
-  "outcome": "프로젝트·활동·교육 데이터 CRUD와 대시보드 요약 API 구현"
+  "outcome": "프로젝트·활동·교육 데이터 CRUD와 대시보드 요약 API 구현",
+  "category": "개인 프로젝트",
+  "teamSize": "개인 (1인)",
+  "benefitName": "Portfolio OS — 프로젝트·활동을 한 번 입력해 여러 문서로 재사용하는 데이터 API",
+  "problem": "포트폴리오 정보를 구조화해 README·CV 등 여러 출력에서 같은 데이터를 재사용하기 위한 개인 개발 프로젝트입니다.",
+  "features": [
+   [
+    "CRUD API",
+    "FastAPI·SQLAlchemy 2·SQLite로 프로젝트·활동·교육·스킬 CRUD API와 공통 태그·타임스탬프, 상태 확인·대시보드 요약 엔드포인트를 구현했습니다."
+   ],
+   [
+    "계층 분리 설계",
+    "데이터 모델과 서비스 계층을 분리해 여러 출력 형식이 같은 정보를 재사용하도록 설계했습니다."
+   ]
+  ]
  },
  {
   "id": "weather",
@@ -488,7 +668,24 @@ const projects = [
   "competition": true,
   "kind": "project",
   "outcome_kind": "저장된 실험 · 팀 채택",
-  "outcome": "본인 LightGBM 튜닝 기록 RMSE 0.77 · 팀 채택 표시"
+  "outcome": "본인 LightGBM 튜닝 기록 RMSE 0.77 · 팀 채택 표시",
+  "category": "대회·공모전",
+  "benefitName": "날씨 빅데이터 콘테스트 — 기상 데이터로 일별 119 신고 수요를 예측",
+  "result": "본인 LightGBM 튜닝 기록 RMSE 0.77 · 팀 최종 공모안 RMSE 0.76 (최종 순위·수상 미확인)",
+  "problem": "기상청 기상 데이터와 부산 119 신고 데이터를 결합해 일별 신고 수요를 예측하고 소방 자원 배치에 활용할 분석을 목표로 했습니다.",
+  "impact": "소방 자원을 수요에 맞게 미리 배치하도록 돕는 공공 안전 방향입니다.",
+  "features": [
+   [
+    "모델 실험",
+    "Random Forest·딥러닝·LightGBM 튜닝을 실험하고 변수 선택과 하이퍼파라미터 탐색, 최종 LightGBM 학습을 정리했습니다."
+   ]
+  ],
+  "troubleshooting": [
+   [
+    "검증 누수 점검",
+    "무작위 검증과 미래 시점 예측의 차이, 범주형 인코딩·변수 선택의 누수 여부를 점검해야 함을 확인했고, 인코딩 단계는 추가 확인이 필요해 일반화를 단정하지 않았습니다."
+   ]
+  ]
  },
  {
   "id": "shipping",
@@ -540,7 +737,24 @@ const projects = [
   "competition": true,
   "kind": "project",
   "outcome_kind": "저장된 제출 실험",
-  "outcome": "본인 MLP 기록 public 0.81058 · 폴드·시드별 검증과 제출 점수 비교"
+  "outcome": "본인 MLP 기록 public 0.81058 · 폴드·시드별 검증과 제출 점수 비교",
+  "category": "대회·공모전",
+  "teamSize": "4인 팀",
+  "benefitName": "스마트 해운물류 AI 챌린지 — 센서 신호로 설비의 비정상 작동을 진단",
+  "result": "본인 MLP 기록 public 0.81058 · TabNet 단일 폴드 public 0.80127 (검증·공개 평가 기록, 최종 성적 아님)",
+  "problem": "센서 특성으로 21개 작동 상태를 분류하는 문제에서 트리 모델과 신경망의 검증·제출 결과를 비교했습니다.",
+  "features": [
+   [
+    "모델 비교 실험",
+    "RF·Grid Search, MLP 튜닝, TabNet 폴드 선택, FT-Transformer 시드 변경 실험을 기록했습니다."
+   ]
+  ],
+  "troubleshooting": [
+   [
+    "검증-공개 점수 괴리",
+    "검증 점수가 높은 단일 폴드를 제출해도 공개 점수는 낮아질 수 있어, 폴드 선택·앙상블·시드 변화가 일반화에 미치는 영향을 비교했습니다."
+   ]
+  ]
  },
  {
   "id": "kopis",
@@ -588,7 +802,17 @@ const projects = [
   "competition": true,
   "kind": "project",
   "outcome_kind": "서비스 제안",
-  "outcome": "공연 패스권 제안서의 배경·필요성과 분석 방법 설계 · 구현 성과와 구분"
+  "outcome": "공연 패스권 제안서의 배경·필요성과 분석 방법 설계 · 구현 성과와 구분",
+  "category": "대회·공모전",
+  "benefitName": "KOPIS 빅데이터 공모전 — 대형 공연과 소규모 공연을 잇는 문화예술 패스권",
+  "problem": "공연예술통합전산망 데이터로 앵커 공연과 인근 서브 공연을 묶는 문화예술 패스 서비스를 제안했습니다.",
+  "impact": "인기 공연의 수요를 소규모 공연으로 연결해 문화 접근성과 소규모 공연 매출을 함께 높이는 방향입니다.",
+  "features": [
+   [
+    "서비스 설계",
+    "공연명·장르·출연진을 임베딩하고 KMeans로 테마를, DBSCAN으로 위치 제약을 고려해 앵커 전후 3일·반경 40km로 서브 공연을 연결하는 구조를 제안했습니다."
+   ]
+  ]
  },
  {
   "id": "agent",
@@ -640,7 +864,27 @@ const projects = [
   "competition": false,
   "kind": "project",
   "outcome_kind": "워크플로우 구현",
-  "outcome": "추천·브랜드 문서 검색·제안서 생성과 실행 상태 관리 경로 통합"
+  "outcome": "추천·브랜드 문서 검색·제안서 생성과 실행 상태 관리 경로 통합",
+  "category": "회사 프로젝트",
+  "benefitName": "라프디 AI 에이전트 — 추천·문서 검색·제안서 생성을 잇는 업무 워크플로우",
+  "problem": "상품 추천과 브랜드 문서 검색, 제안서 생성이 연결되는 AI 워크플로우를 구성했습니다.",
+  "impact": "제안서 작성과 상품 추천을 한 흐름으로 묶어 영업·마케팅 업무 시간을 줄이는 방향입니다.",
+  "features": [
+   [
+    "워크플로우 실행",
+    "플래너, 추천·제안서 서비스, 브랜드 문서 검색과 실행 경로를 Django ORM·분리 DB 라우터, React 화면·배포 구성으로 문서화했습니다."
+   ],
+   [
+    "추천-생성 연결",
+    "기존 예측 점수 조회와 신규 상품 임베딩·유사도 검색을 두고, 선택한 추천 결과를 제안서 생성으로 연결했습니다."
+   ]
+  ],
+  "troubleshooting": [
+   [
+    "상태 관리·설명가능성 과제",
+    "추천 품질과 생성 문서의 근거 일치, 실행 실패·승인 흐름을 각각 평가하고, 연구 모델을 서비스에 넣을 때의 상태 관리·설명 가능성을 과제로 정리했습니다."
+   ]
+  ]
  },
  {
   "id": "music",
@@ -719,7 +963,31 @@ const projects = [
   ],
   "kind": "project",
   "outcome_kind": "실측 · 통제 평가",
-  "outcome": "한 곡 전처리 132→35.4초 · 인위적 변화 11/11 탐지, 실제 합주 정확도 미평가"
+  "outcome": "한 곡 전처리 132→35.4초 · 인위적 변화 11/11 탐지, 실제 합주 정확도 미평가",
+  "category": "팀 프로젝트",
+  "benefitName": "모여락 음악 분석 — 곡 특징 추출부터 합주 구간 피드백까지",
+  "result": "한 곡 전처리 132→35.4초 · 보지 않은 3곡 인위적 변화 11/11 탐지 · 동일 음원 3/3 후보 없음 (통제 평가, 실제 합주 정확도 아님)",
+  "problem": "밴드의 곡 선택과 합주 연습을 연결하기 위해 곡의 악기별 특징·난이도 후보를 추천 입력으로 제공하고, 합주 뒤 다시 들어볼 구간과 근거를 제시합니다.",
+  "features": [
+   [
+    "다섯 악기 통합 전처리",
+    "보컬·베이스·드럼·건반·기타 결과를 JSON으로 통합하고, Demucs 6-stem 분리를 한 번 수행해 공유하며 독립 분석을 병렬 실행합니다."
+   ],
+   [
+    "합주 피드백",
+    "chroma·DTW로 원곡과 합주를 정렬하고 MFCC·RMS·onset·stem 에너지로 음 구성·누락·박자·밸런스 차이 후보를 찾아 근거 수치와 함께 제시합니다."
+   ]
+  ],
+  "troubleshooting": [
+   [
+    "정렬 실패 보류",
+    "라이브 비교에서 시간 정렬이 한 지점에 몰려 후보 28개가 생긴 사례에 정렬 품질 조건을 더해 review_required로 보류하고, 피아노 음표 오탐에는 독립 음향 차이가 같은 구간일 때만 후보를 표시하도록 했습니다."
+   ],
+   [
+    "속도 최적화",
+    "동일 2분 14초 음원 처리 시간을 132초에서 35.4초로 줄였습니다(특정 환경 1회 측정). 4→6 stem 변경으로 특징값 차이가 생겨 별도 검증이 필요합니다."
+   ]
+  ]
  },
  {
   "id": "moa",
@@ -731,21 +999,62 @@ const projects = [
   "date": "2026 가을",
   "status": "팀 프로젝트 · 시연 구현",
   "role": "파일 분류 흐름 · Mac 에이전트와 웹 연동",
-  "tags": ["Qwen3-1.7B", "macOS Vision", "Django", "iCloud Drive"],
+  "tags": [
+   "Qwen3-1.7B",
+   "macOS Vision",
+   "Django",
+   "iCloud Drive"
+  ],
   "repo": "https://github.com/molba2see/KCC_agent",
   "summary": "다운로드와 캡처 파일을 내용·출처·폴더 지침으로 분류하고, 사용자의 승인과 되돌리기를 연결하는 macOS 로컬 에이전트 및 웹 화면입니다.",
   "sections": [
-   ["문제 정의", "강의자료, 아이폰 캡처, 설치 파일이 다운로드와 바탕화면에 쌓일 때 필요한 자료를 찾기 어렵습니다. 파일마다 내용을 확인하고 정리해야 하는 반복 작업을 줄이고자 했습니다."],
-   ["구현 흐름", "iCloud로 들어온 캡처는 macOS Vision OCR과 Qwen3-1.7B로 이름을 정하고, 폴더별 지침과 문서 본문·다운로드 출처를 바탕으로 분류합니다. 처음 보는 강의실은 사용자에게 목적 폴더를 물은 뒤 규칙으로 기억합니다."],
-   ["승인과 복구", "애매한 파일은 모아서 물어보고, 이동과 설치 파일 보관은 기록을 남겨 되돌릴 수 있게 했습니다. 웹은 Django API와 Mac 브리지를 통해 분류 대기, 명령 기록, 복구 상태를 보여 줍니다."],
-   ["설계에서 배운 점", "파일 속 지시문을 실행 지침으로 받아들이지 않도록 입력을 검증하고, 모델이 직접 삭제나 셸 명령을 수행하지 않게 권한을 나눴습니다. 모델 판단과 사람이 확인할 수 있는 실행 기록을 함께 다루는 경험이었습니다."]
+   [
+    "문제 정의",
+    "강의자료, 아이폰 캡처, 설치 파일이 다운로드와 바탕화면에 쌓일 때 필요한 자료를 찾기 어렵습니다. 파일마다 내용을 확인하고 정리해야 하는 반복 작업을 줄이고자 했습니다."
+   ],
+   [
+    "구현 흐름",
+    "iCloud로 들어온 캡처는 macOS Vision OCR과 Qwen3-1.7B로 이름을 정하고, 폴더별 지침과 문서 본문·다운로드 출처를 바탕으로 분류합니다. 처음 보는 강의실은 사용자에게 목적 폴더를 물은 뒤 규칙으로 기억합니다."
+   ],
+   [
+    "승인과 복구",
+    "애매한 파일은 모아서 물어보고, 이동과 설치 파일 보관은 기록을 남겨 되돌릴 수 있게 했습니다. 웹은 Django API와 Mac 브리지를 통해 분류 대기, 명령 기록, 복구 상태를 보여 줍니다."
+   ],
+   [
+    "설계에서 배운 점",
+    "파일 속 지시문을 실행 지침으로 받아들이지 않도록 입력을 검증하고, 모델이 직접 삭제나 셸 명령을 수행하지 않게 권한을 나눴습니다. 모델 판단과 사람이 확인할 수 있는 실행 기록을 함께 다루는 경험이었습니다."
+   ]
   ],
   "note": "저장소의 구현 및 시연 문서를 기준으로 정리했습니다. 실제 Mac 폴더와 iCloud 계정은 연결·권한 설정이 필요하며, 서비스 규모의 운영 성능은 주장하지 않습니다.",
-  "links": [["프로젝트 코드와 시연", "https://github.com/molba2see/KCC_agent"]],
+  "links": [
+   [
+    "프로젝트 코드와 시연",
+    "https://github.com/molba2see/KCC_agent"
+   ]
+  ],
   "competition": false,
   "kind": "project",
   "outcome_kind": "에이전트 시연",
-  "outcome": "캡처·강의자료 분류, 사용자 승인과 되돌리기, 웹 상태 연결"
+  "outcome": "캡처·강의자료 분류, 사용자 승인과 되돌리기, 웹 상태 연결",
+  "category": "팀 프로젝트",
+  "benefitName": "모아 — 아이폰 캡처·강의자료를 맥에서 알아서 정리하는 로컬 에이전트",
+  "problem": "다운로드·바탕화면에 쌓이는 강의자료·캡처·설치 파일을 매번 확인해 정리하는 반복 작업을 줄이려 했습니다.",
+  "features": [
+   [
+    "내용 기반 분류",
+    "iCloud 캡처를 macOS Vision OCR·Qwen3-1.7B로 이름 짓고, 폴더 지침·문서 본문·다운로드 출처로 분류하며 처음 보는 강의실은 목적 폴더를 물어 규칙으로 기억합니다."
+   ],
+   [
+    "승인·복구",
+    "애매한 파일은 모아 물어보고, 이동·설치 파일 보관은 기록을 남겨 되돌릴 수 있게 했습니다. Django API·Mac 브리지로 분류 대기·명령 기록·복구 상태를 보여 줍니다."
+   ]
+  ],
+  "troubleshooting": [
+   [
+    "권한·입력 검증",
+    "파일 속 지시문을 실행 지침으로 받아들이지 않도록 입력을 검증하고, 모델이 직접 삭제·셸 명령을 못 하게 권한을 나눴습니다."
+   ]
+  ]
  },
  {
   "id": "hymate",
@@ -757,21 +1066,64 @@ const projects = [
   "date": "2026.11",
   "status": "5인 팀 · 차량용 앱 구현",
   "role": "앱 개발 · 차량 신호 기반 판정과 화면 구현",
-  "tags": ["Kotlin", "Jetpack Compose", "Pleos Vehicle SDK", "OSRM"],
+  "tags": [
+   "Kotlin",
+   "Jetpack Compose",
+   "Pleos Vehicle SDK",
+   "OSRM"
+  ],
   "repo": "https://github.com/molba2see/Hymate",
   "summary": "초보운전자가 혼자 운전할 때 차량 조작을 조용히 확인하고, 정차 중 피드백과 주차 후 리포트로 학습할 수 있도록 만든 차량용 앱입니다.",
   "sections": [
-   ["문제 정의", "운전 연습에서 동승자의 조언이 사라지면 어떤 조작을 잘했는지, 놓쳤는지 알기 어렵습니다. 주행 중 화면 조작을 요구하지 않고 차량 데이터로 연습을 돕는 방식을 택했습니다."],
-   ["개인 기여", "5인 팀에서 앱 개발을 맡아 Kotlin·Jetpack Compose 화면과 차량 신호를 이용한 기능 구현에 참여했습니다. 기획·PO·PM 등 팀 역할과 구분해 기록합니다."],
-   ["주행과 피드백", "OSRM과 OpenStreetMap으로 실제 도로 경로를 탐색하고 회전·합류 지점을 판정에 연결했습니다. 방향지시등, 전조등, 와이퍼, 차속 등 수신 가능한 신호를 읽고, 정차 중 한 건의 음성 피드백과 주차 후 근거가 있는 리포트를 제공합니다."],
-   ["안전과 평가 범위", "주행 중에는 화면과 음성 개입을 제한합니다. 차량이 알 수 없는 상황이나 지원하지 않는 신호는 추측해 실패로 판정하지 않고 자가 확인으로 넘기며, 오판은 이의를 제기할 수 있도록 설계했습니다."]
+   [
+    "문제 정의",
+    "운전 연습에서 동승자의 조언이 사라지면 어떤 조작을 잘했는지, 놓쳤는지 알기 어렵습니다. 주행 중 화면 조작을 요구하지 않고 차량 데이터로 연습을 돕는 방식을 택했습니다."
+   ],
+   [
+    "개인 기여",
+    "5인 팀에서 앱 개발을 맡아 Kotlin·Jetpack Compose 화면과 차량 신호를 이용한 기능 구현에 참여했습니다. 기획·PO·PM 등 팀 역할과 구분해 기록합니다."
+   ],
+   [
+    "주행과 피드백",
+    "OSRM과 OpenStreetMap으로 실제 도로 경로를 탐색하고 회전·합류 지점을 판정에 연결했습니다. 방향지시등, 전조등, 와이퍼, 차속 등 수신 가능한 신호를 읽고, 정차 중 한 건의 음성 피드백과 주차 후 근거가 있는 리포트를 제공합니다."
+   ],
+   [
+    "안전과 평가 범위",
+    "주행 중에는 화면과 음성 개입을 제한합니다. 차량이 알 수 없는 상황이나 지원하지 않는 신호는 추측해 실패로 판정하지 않고 자가 확인으로 넘기며, 오판은 이의를 제기할 수 있도록 설계했습니다."
+   ]
   ],
   "note": "Pleos Connect Emulator에서 차량 신호를 조작하며 시연하는 프로젝트입니다. 실제 도로 주행이나 운전자 행동 개선 효과를 검증한 결과로 소개하지 않습니다.",
-  "links": [["앱 코드와 화면", "https://github.com/molba2see/Hymate"]],
+  "links": [
+   [
+    "앱 코드와 화면",
+    "https://github.com/molba2see/Hymate"
+   ]
+  ],
   "competition": false,
   "kind": "project",
   "outcome_kind": "차량용 앱 구현",
-  "outcome": "실도로 경로, 차량 신호 판정, 정차 피드백과 주행 리포트 구현"
+  "outcome": "실도로 경로, 차량 신호 판정, 정차 피드백과 주행 리포트 구현",
+  "category": "팀 프로젝트",
+  "teamSize": "5인 팀",
+  "benefitName": "Hy! mate — 차량 신호로 초보운전을 조용히 코치하는 동승 앱",
+  "problem": "혼자 운전 연습을 하면 어떤 조작을 잘했는지 놓쳤는지 알기 어렵습니다. 주행 중 화면 조작을 요구하지 않고 차량 데이터로 연습을 돕는 방식을 택했습니다.",
+  "impact": "초보운전자의 사고 위험을 줄이고 안전한 운전 습관을 돕는 방향입니다.",
+  "features": [
+   [
+    "실도로 판정·피드백",
+    "OSRM·OpenStreetMap으로 실제 도로 경로를 탐색하고 회전·합류 지점을 판정에 연결합니다. 방향지시등·전조등·와이퍼·차속 등 신호를 읽어 정차 중 음성 피드백과 주차 후 리포트를 제공합니다."
+   ]
+  ],
+  "troubleshooting": [
+   [
+    "알 수 없는 신호 처리",
+    "차량이 모르는 상황이나 지원하지 않는 신호를 추측해 실패로 판정하지 않도록, 자가 확인으로 넘기고 오판에 이의를 제기할 수 있는 흐름을 설계했습니다."
+   ],
+   [
+    "주행 중 개입 제한",
+    "주행 중에는 화면·음성 개입을 제한하고 정차 중 한 건의 피드백·주차 후 리포트로 학습을 돕도록 안전 범위를 나눴습니다."
+   ]
+  ]
  },
  {
   "id": "musicrec",
@@ -783,20 +1135,52 @@ const projects = [
   "date": "2026.11 · 작업 브랜치",
   "status": "규칙 기반 API · MDAE 실험",
   "role": "음악 추천 로직 · API · 추천 실험 기록",
-  "tags": ["CLAP", "MDAE", "Two-Tower", "FastAPI"],
+  "tags": [
+   "CLAP",
+   "MDAE",
+   "Two-Tower",
+   "FastAPI"
+  ],
   "repo": "https://github.com/D-X-W-Service-2/moyeorock-ai",
   "summary": "곡의 특성과 멤버의 장르·악기 선호를 연결해 개인 곡·팀 곡·팀원을 추천하는 API와, masked two-tower(MDAE) 음악 추천 실험 기록입니다.",
   "sections": [
-   ["작업 범위", "기본 main 외 AI 작업 브랜치의 추천 API 문서와 mdae_music 실험 README를 확인했습니다. 25,062곡 장르 후보와 25,056곡 임시 난이도 특징을 추천 입력으로 다룹니다."],
-   ["추천 방식", "개인 곡·팀 곡·팀원 추천 API의 기본 순위는 규칙 방식이고, MDAE(마스킹 듀얼타워)는 실험 경로로 둡니다. 두 경로를 분리해 다뤘습니다."],
-   ["평가 범위", "2,000명 프로필과 행동 기록은 합성 자료이고, v1·v2·300 epoch 결과는 서로 다른 조건의 개발 점검입니다. 실제 사용자 추천 성능으로 쓰지 않았고, 현재 문서는 여러 조건에서 규칙 방식이 더 높다고 설명합니다."]
+   [
+    "작업 범위",
+    "기본 main 외 AI 작업 브랜치의 추천 API 문서와 mdae_music 실험 README를 확인했습니다. 25,062곡 장르 후보와 25,056곡 임시 난이도 특징을 추천 입력으로 다룹니다."
+   ],
+   [
+    "추천 방식",
+    "개인 곡·팀 곡·팀원 추천 API의 기본 순위는 규칙 방식이고, MDAE(마스킹 듀얼타워)는 실험 경로로 둡니다. 두 경로를 분리해 다뤘습니다."
+   ],
+   [
+    "평가 범위",
+    "2,000명 프로필과 행동 기록은 합성 자료이고, v1·v2·300 epoch 결과는 서로 다른 조건의 개발 점검입니다. 실제 사용자 추천 성능으로 쓰지 않았고, 현재 문서는 여러 조건에서 규칙 방식이 더 높다고 설명합니다."
+   ]
   ],
   "note": "작업 브랜치의 최신 문서로 정리했습니다. main 병합·운영 배포로 간주하지 않았고, 드럼·건반 등 다른 팀원 파트까지 개인 구현으로 합산하지 않았습니다.",
-  "links": [["음악 AI 작업 브랜치", "https://github.com/D-X-W-Service-2/moyeorock-ai/tree/codex/backend-ai-api-20261111"]],
+  "links": [
+   [
+    "음악 AI 작업 브랜치",
+    "https://github.com/D-X-W-Service-2/moyeorock-ai/tree/codex/backend-ai-api-20261111"
+   ]
+  ],
   "competition": false,
   "kind": "project",
   "outcome_kind": "추천 API · 실험",
-  "outcome": "개인·팀 곡과 팀원 추천 API 및 MDAE 음악 추천 실험 구성 · 합성 데이터 기준"
+  "outcome": "개인·팀 곡과 팀원 추천 API 및 MDAE 음악 추천 실험 구성 · 합성 데이터 기준",
+  "category": "팀 프로젝트",
+  "benefitName": "모여락 추천 — 곡 특성과 멤버 취향을 잇는 곡·팀원 추천",
+  "problem": "곡의 특성과 멤버의 장르·악기 선호를 연결해 개인 곡·팀 곡·팀원을 추천하는 API와 MDAE 음악 추천 실험을 다뤘습니다.",
+  "features": [
+   [
+    "규칙·실험 분리",
+    "개인 곡·팀 곡·팀원 추천 API의 기본 순위는 규칙 방식이고, MDAE(마스킹 듀얼타워)는 실험 경로로 분리했습니다."
+   ],
+   [
+    "추천 입력 구축",
+    "25,062곡 장르 후보와 25,056곡 임시 난이도 특징을 추천 입력으로 다뤘습니다."
+   ]
+  ]
  },
  {
   "id": "crawling",
@@ -808,19 +1192,48 @@ const projects = [
   "date": "2026 · 회사 프로젝트",
   "status": "코드 비공개",
   "role": "플랫폼별 수집기 · URL 정규화 · 공통 스키마 · 재개 처리",
-  "tags": ["Python", "Apify", "YouTube API", "Playwright"],
+  "tags": [
+   "Python",
+   "Apify",
+   "YouTube API",
+   "Playwright"
+  ],
   "repo": null,
   "summary": "Instagram·YouTube·네이버 블로그의 프로필과 최근 게시물을 같은 구조로 수집하는 데이터 파이프라인입니다. Link:D 매칭 서비스의 후속 데이터 작업을 데이터 엔지니어링 관점에서 분리해 기록했습니다.",
   "sections": [
-   ["구현", "crawling.py와 common.py로 공통 흐름을 두고 instagram_crawler·youtube_crawler·naver_blog_crawler를 분리했습니다. URL 정규화와 공통 결과 스키마, 중간 저장과 done·error 출력 경로를 구성했습니다."],
-   ["기록 범위", "회사 저장소의 최신 README와 서비스 문서를 대조했습니다. 실제 API 키와 원본 개인 데이터는 포함하지 않았습니다."]
+   [
+    "구현",
+    "crawling.py와 common.py로 공통 흐름을 두고 instagram_crawler·youtube_crawler·naver_blog_crawler를 분리했습니다. URL 정규화와 공통 결과 스키마, 중간 저장과 done·error 출력 경로를 구성했습니다."
+   ],
+   [
+    "기록 범위",
+    "회사 저장소의 최신 README와 서비스 문서를 대조했습니다. 실제 API 키와 원본 개인 데이터는 포함하지 않았습니다."
+   ]
   ],
   "note": "비공개 회사 저장소의 구조와 문서를 근거로 요약했습니다. 고객 데이터·키·운영 성능은 포함·검증하지 않았습니다.",
-  "links": [["수집·전처리 코드 · 비공개", "https://github.com/yujalabs-dev/lafd-data-processing"]],
+  "links": [
+   [
+    "수집·전처리 코드 · 비공개",
+    "https://github.com/yujalabs-dev/lafd-data-processing"
+   ]
+  ],
   "competition": false,
   "kind": "project",
   "outcome_kind": "데이터 파이프라인",
-  "outcome": "3개 플랫폼 수집기, URL 정규화·공통 스키마·재개 처리와 오류 출력 경로 구성"
+  "outcome": "3개 플랫폼 수집기, URL 정규화·공통 스키마·재개 처리와 오류 출력 경로 구성",
+  "category": "회사 프로젝트",
+  "benefitName": "라프디 다중 플랫폼 크롤링 — 인스타·유튜브·네이버 블로그를 한 스키마로 수집",
+  "problem": "Instagram·YouTube·네이버 블로그의 프로필·최근 게시물을 같은 구조로 수집해 추천 데이터로 쓰는 파이프라인이 필요했습니다.",
+  "features": [
+   [
+    "플랫폼별 수집기",
+    "crawling.py·common.py로 공통 흐름을 두고 instagram·youtube·naver_blog 수집기를 분리했습니다."
+   ],
+   [
+    "정규화·재개",
+    "URL 정규화와 공통 결과 스키마, 중간 저장과 done·error 출력 경로로 재개 가능하게 구성했습니다."
+   ]
+  ]
  },
  {
   "id": "timetable",
@@ -832,18 +1245,40 @@ const projects = [
   "date": "2026 · 개인 웹 앱",
   "status": "개인 프로젝트",
   "role": "강의 엑셀 처리 · 시간표·장바구니 UI",
-  "tags": ["React", "Vite", "XLSX"],
+  "tags": [
+   "React",
+   "Vite",
+   "XLSX"
+  ],
   "repo": "https://github.com/molba2see/timetable",
   "summary": "강의 파일의 분반 데이터를 검색하고 여러 장바구니와 시간표에 배치하는 웹 앱입니다.",
   "sections": [
-   ["구현한 기능", "다중 Excel 업로드와 분반 정규화, 복수 장바구니, 겹치는 시간 차단, 총 학점 계산, 패널 크기 조절을 코드에서 확인했습니다."]
+   [
+    "구현한 기능",
+    "다중 Excel 업로드와 분반 정규화, 복수 장바구니, 겹치는 시간 차단, 총 학점 계산, 패널 크기 조절을 코드에서 확인했습니다."
+   ]
   ],
   "note": "저장소 코드를 근거로 정리했으며 이번에 앱 실행·사용자 검증을 새로 수행하지 않았습니다.",
-  "links": [["코드", "https://github.com/molba2see/timetable"]],
+  "links": [
+   [
+    "코드",
+    "https://github.com/molba2see/timetable"
+   ]
+  ],
   "competition": false,
   "kind": "project",
   "outcome_kind": "웹 앱 구현",
-  "outcome": "엑셀 다중 업로드·분반 정규화·시간 충돌 차단·총 학점 계산 구현"
+  "outcome": "엑셀 다중 업로드·분반 정규화·시간 충돌 차단·총 학점 계산 구현",
+  "category": "개인 프로젝트",
+  "teamSize": "개인 (1인)",
+  "benefitName": "강의 시간표 빌더 — 강의 엑셀을 검색해 장바구니·시간표로 배치",
+  "problem": "강의 파일의 분반 데이터를 검색해 여러 장바구니와 시간표에 배치하는 수강신청 준비 웹 앱입니다.",
+  "features": [
+   [
+    "엑셀 처리·배치",
+    "다중 Excel 업로드·분반 정규화, 복수 장바구니, 겹치는 시간 차단, 총 학점 계산, 패널 크기 조절을 구현했습니다."
+   ]
+  ]
  },
  {
   "id": "recreation",
@@ -855,19 +1290,48 @@ const projects = [
   "date": "2026 · 행사 운영",
   "status": "HTML·React 두 버전",
   "role": "퀴즈 UI · 오디오·영상 진행 · 팀 점수 관리",
-  "tags": ["React", "TypeScript", "YouTube", "CSV"],
+  "tags": [
+   "React",
+   "TypeScript",
+   "YouTube",
+   "CSV"
+  ],
   "repo": "https://github.com/molba2see/exaiting",
   "summary": "인물·음악·영상 문제와 팀 점수판을 연결한 행사 진행용 웹 도구입니다. 초기 HTML 버전과 React·TypeScript 버전이 있습니다.",
   "sections": [
-   ["구현", "퀴즈, 음악·영상 재생, 배경음악, CSV 문제 처리와 팀 점수 저장 모듈을 두 저장소에서 확인했습니다."],
-   ["버전 관리", "유사한 용도의 별도 코드를 같은 프로젝트의 관련 버전으로 묶었고, 정확한 계보·기여 분담은 추정하지 않았습니다."]
+   [
+    "구현",
+    "퀴즈, 음악·영상 재생, 배경음악, CSV 문제 처리와 팀 점수 저장 모듈을 두 저장소에서 확인했습니다."
+   ],
+   [
+    "버전 관리",
+    "유사한 용도의 별도 코드를 같은 프로젝트의 관련 버전으로 묶었고, 정확한 계보·기여 분담은 추정하지 않았습니다."
+   ]
   ],
   "note": "행사 운영용 구현 기록이며 실제 이용자 수·운영 성과는 확인하지 않았습니다.",
-  "links": [["확장 버전", "https://github.com/molba2see/exaiting"], ["초기 버전", "https://github.com/molba2see/Recreation"]],
+  "links": [
+   [
+    "확장 버전",
+    "https://github.com/molba2see/exaiting"
+   ],
+   [
+    "초기 버전",
+    "https://github.com/molba2see/Recreation"
+   ]
+  ],
   "competition": false,
   "kind": "project",
   "outcome_kind": "행사 도구 구현",
-  "outcome": "퀴즈·미디어 진행과 CSV 문제·팀 점수 관리 도구 구현 · 두 버전"
+  "outcome": "퀴즈·미디어 진행과 CSV 문제·팀 점수 관리 도구 구현 · 두 버전",
+  "category": "행사 운영",
+  "benefitName": "레크레이션 퀴즈 도구 — 인물·음악·영상 문제와 팀 점수판으로 행사 진행",
+  "problem": "인물·음악·영상 문제와 팀 점수판을 연결해 행사를 진행하는 웹 도구입니다.",
+  "features": [
+   [
+    "퀴즈·미디어 진행",
+    "퀴즈·음악·영상 재생·배경음악·CSV 문제 처리와 팀 점수 저장 모듈을 구현했습니다(HTML·React 두 버전)."
+   ]
+  ]
  },
  {
   "id": "xai7",
@@ -879,18 +1343,40 @@ const projects = [
   "date": "2026 · 학회 세션",
   "status": "논문 구현·학습 자료",
   "role": "TEAM D / Eunjin_Lee 경로",
-  "tags": ["Attention", "Transformer", "U-Net", "YOLO"],
+  "tags": [
+   "Attention",
+   "Transformer",
+   "U-Net",
+   "YOLO"
+  ],
   "repo": "https://github.com/X-AI-eXtension-Artificial-Intelligence/7th-BASE-SESSION",
   "summary": "X:AI 학회 Base 세션의 기초 논문 구현을 Attention·Transformer·U-Net·YOLO 경로로 정리한 학습 자료입니다.",
   "sections": [
-   ["개인 경로", "TEAM D/Attention·Transformer·U-net·YOLO/Eunjin_Lee 경로를 확인했습니다. 경로별 README와 모델·학습·평가 파일의 유무를 구분했고, 문서만 있는 경로까지 완성 모델로 계산하지 않았습니다."]
+   [
+    "개인 경로",
+    "TEAM D/Attention·Transformer·U-net·YOLO/Eunjin_Lee 경로를 확인했습니다. 경로별 README와 모델·학습·평가 파일의 유무를 구분했고, 문서만 있는 경로까지 완성 모델로 계산하지 않았습니다."
+   ]
   ],
   "note": "학회 학습용 구현·문서 기록입니다. 검증된 성능으로 제시하지 않았습니다.",
-  "links": [["학회 코드", "https://github.com/X-AI-eXtension-Artificial-Intelligence/7th-BASE-SESSION"]],
+  "links": [
+   [
+    "학회 코드",
+    "https://github.com/X-AI-eXtension-Artificial-Intelligence/7th-BASE-SESSION"
+   ]
+  ],
   "competition": false,
   "kind": "project",
   "outcome_kind": "논문 구현 학습",
-  "outcome": "Attention·Transformer·U-Net·YOLO 구현·문서를 본인 경로로 정리"
+  "outcome": "Attention·Transformer·U-Net·YOLO 구현·문서를 본인 경로로 정리",
+  "category": "수업·학회",
+  "benefitName": "X:AI 7기 구현 — Attention·Transformer·U-Net·YOLO 기초 논문 구현",
+  "problem": "학회 Base 세션에서 기초 논문(Attention·Transformer·U-Net·YOLO)을 본인 경로에 구현·정리했습니다.",
+  "features": [
+   [
+    "경로별 구현",
+    "TEAM D/Attention·Transformer·U-net·YOLO/Eunjin_Lee 경로에서 README와 모델·학습·평가 파일의 유무를 구분해 정리했습니다."
+   ]
+  ]
  },
  {
   "id": "xai6",
@@ -902,19 +1388,44 @@ const projects = [
   "date": "2025 · 학회 세션",
   "status": "논문 구현·학습",
   "role": "TEAM A / 은진 경로의 학습·평가 코드",
-  "tags": ["Transformer", "U-Net", "PyTorch"],
+  "tags": [
+   "Transformer",
+   "U-Net",
+   "PyTorch"
+  ],
   "repo": "https://github.com/X-AI-eXtension-Artificial-Intelligence/6th-BASE-SESSION",
   "summary": "X:AI 학회 Base 세션에서 기초 논문 구조를 구현하고 데이터 처리와 세포 이미지 분할 학습을 기록한 작업입니다.",
   "sections": [
-   ["개인 경로", "TEAM A/Transformer/은진, TEAM A/UNet/은진 아래 구현을 확인했습니다. 학회 저장소 전체가 개인 작업이라는 뜻은 아니며 본인 경로만 연결했습니다."],
-   ["남은 기록", "U-Net README에 60 epoch 평균 Dice 0.2416, IoU 0.1537이 남아 있습니다. 이번에 재측정한 성능은 아닙니다."]
+   [
+    "개인 경로",
+    "TEAM A/Transformer/은진, TEAM A/UNet/은진 아래 구현을 확인했습니다. 학회 저장소 전체가 개인 작업이라는 뜻은 아니며 본인 경로만 연결했습니다."
+   ],
+   [
+    "남은 기록",
+    "U-Net README에 60 epoch 평균 Dice 0.2416, IoU 0.1537이 남아 있습니다. 이번에 재측정한 성능은 아닙니다."
+   ]
   ],
   "note": "학회 학습용 구현 기록입니다. 재측정·완성 모델 성능으로 제시하지 않았습니다.",
-  "links": [["학회 코드", "https://github.com/X-AI-eXtension-Artificial-Intelligence/6th-BASE-SESSION"]],
+  "links": [
+   [
+    "학회 코드",
+    "https://github.com/X-AI-eXtension-Artificial-Intelligence/6th-BASE-SESSION"
+   ]
+  ],
   "competition": false,
   "kind": "project",
   "outcome_kind": "논문 구현 학습",
-  "outcome": "Transformer·U-Net 구현과 분할 학습 기록 · 본인 경로"
+  "outcome": "Transformer·U-Net 구현과 분할 학습 기록 · 본인 경로",
+  "category": "수업·학회",
+  "benefitName": "X:AI 6기 구현 — Transformer·U-Net 기초 논문 구현과 분할 학습",
+  "result": "U-Net 60 epoch 평균 Dice 0.2416 · IoU 0.1537 (저장된 학습 기록, 재측정 아님)",
+  "problem": "학회 Base 세션에서 Transformer·U-Net을 구현하고 데이터 처리·세포 이미지 분할 학습을 기록했습니다.",
+  "features": [
+   [
+    "구현·학습",
+    "TEAM A/Transformer/은진, TEAM A/UNet/은진 경로에서 학습·평가 코드를 구현했습니다."
+   ]
+  ]
  },
  {
   "id": "cicd",
@@ -926,18 +1437,40 @@ const projects = [
   "date": "2026 · 클라우드 실습",
   "status": "코드 비공개",
   "role": "웹 앱·컨테이너·배포 워크플로우",
-  "tags": ["Flask", "Docker", "GitHub Actions"],
+  "tags": [
+   "Flask",
+   "Docker",
+   "GitHub Actions"
+  ],
   "repo": null,
   "summary": "Flask 예제 앱을 컨테이너로 구성하고 GitHub Actions 워크플로우를 둔 CI/CD 실습입니다.",
   "sections": [
-   ["구현", "소유자·컨테이너 ID·버전을 보여 주는 루트 페이지와 /health API, Dockerfile·requirements·.github/workflows를 확인했습니다."]
+   [
+    "구현",
+    "소유자·컨테이너 ID·버전을 보여 주는 루트 페이지와 /health API, Dockerfile·requirements·.github/workflows를 확인했습니다."
+   ]
   ],
   "note": "워크플로우 존재를 기준으로 수집했고 현재 배포 성공 여부는 새로 검증하지 않았습니다.",
-  "links": [["실습 코드 · 비공개", "https://github.com/molba2see/myapp-cicd-40"]],
+  "links": [
+   [
+    "실습 코드 · 비공개",
+    "https://github.com/molba2see/myapp-cicd-40"
+   ]
+  ],
   "competition": false,
   "kind": "project",
   "outcome_kind": "CI/CD 실습",
-  "outcome": "Flask 앱 컨테이너화와 GitHub Actions 워크플로우 구성"
+  "outcome": "Flask 앱 컨테이너화와 GitHub Actions 워크플로우 구성",
+  "category": "클라우드 실습",
+  "teamSize": "개인 (1인)",
+  "benefitName": "Flask·Docker CI/CD 실습 — 컨테이너와 GitHub Actions 배포 자동화",
+  "problem": "Flask 예제 앱을 컨테이너로 구성하고 GitHub Actions 워크플로우로 배포를 자동화하는 실습입니다.",
+  "features": [
+   [
+    "컨테이너·워크플로우",
+    "소유자·컨테이너 ID·버전을 보여 주는 루트 페이지와 /health API, Dockerfile·requirements·.github/workflows를 구성했습니다."
+   ]
+  ]
  },
  {
   "id": "recipe",
@@ -949,18 +1482,40 @@ const projects = [
   "date": "2026.10 · 개인 웹",
   "status": "개인 프로젝트",
   "role": "레시피 화면 · 인분 조절·재료 체크",
-  "tags": ["HTML", "CSS", "JavaScript"],
+  "tags": [
+   "HTML",
+   "CSS",
+   "JavaScript"
+  ],
   "repo": "https://github.com/molba2see/yakisoba-recipe",
   "summary": "팬 하나로 만드는 야끼소바 조리 과정을 보여 주는 레시피 사이트입니다. 인분 조절과 재료 체크 기능이 있습니다.",
   "sections": [
-   ["구현", "index.html·script.js·style.css와 배포 워크플로우를 수집했습니다. 인분 조절과 재료 체크 기능을 설명한 코드입니다."]
+   [
+    "구현",
+    "index.html·script.js·style.css와 배포 워크플로우를 수집했습니다. 인분 조절과 재료 체크 기능을 설명한 코드입니다."
+   ]
   ],
   "note": "저장소 구성을 근거로 정리했으며 브라우저 동작 확인은 수행하지 않았습니다.",
-  "links": [["코드", "https://github.com/molba2see/yakisoba-recipe"]],
+  "links": [
+   [
+    "코드",
+    "https://github.com/molba2see/yakisoba-recipe"
+   ]
+  ],
   "competition": false,
   "kind": "project",
   "outcome_kind": "웹 구현",
-  "outcome": "인분 조절·재료 체크 레시피 웹 구현"
+  "outcome": "인분 조절·재료 체크 레시피 웹 구현",
+  "category": "개인 프로젝트",
+  "teamSize": "개인 (1인)",
+  "benefitName": "야끼소바 레시피 웹 — 인분 조절·재료 체크가 되는 레시피 사이트",
+  "problem": "팬 하나로 만드는 야끼소바 조리 과정을 보여 주는 레시피 사이트입니다.",
+  "features": [
+   [
+    "레시피 UI",
+    "인분 조절과 재료 체크 기능을 index.html·script.js·style.css와 배포 워크플로우로 구성했습니다."
+   ]
+  ]
  },
  {
   "id": "blackjack",
@@ -972,18 +1527,44 @@ const projects = [
   "date": "2024 · 학습 프로젝트",
   "status": "학습·협업",
   "role": "eunjin.py · 은진.py 구현",
-  "tags": ["Python", "CLI", "Game"],
+  "tags": [
+   "Python",
+   "CLI",
+   "Game"
+  ],
   "repo": "https://github.com/molba2see/udemy",
   "summary": "카드 배분, 에이스 점수 조정, 딜러 규칙과 승패 비교를 구현한 콘솔 블랙잭과 숫자 맞히기 초기 프로그래밍 학습입니다.",
   "sections": [
-   ["개인 코드", "협업 저장소의 eunjin.py와 udemy/blackjack·number/은진.py가 있습니다. eunjin.py에서 deal_card·calculate_score·compare·play_game을 확인했습니다."]
+   [
+    "개인 코드",
+    "협업 저장소의 eunjin.py와 udemy/blackjack·number/은진.py가 있습니다. eunjin.py에서 deal_card·calculate_score·compare·play_game을 확인했습니다."
+   ]
   ],
   "note": "독창적 알고리즘 연구가 아니라 초기 프로그래밍 학습 기록으로 보존합니다.",
-  "links": [["개인 학습 코드", "https://github.com/molba2see/udemy"], ["협업 코드", "https://github.com/Taekeun-Prince-And-Siyeon-Princess/BlackJackGameProject"]],
+  "links": [
+   [
+    "개인 학습 코드",
+    "https://github.com/molba2see/udemy"
+   ],
+   [
+    "협업 코드",
+    "https://github.com/Taekeun-Prince-And-Siyeon-Princess/BlackJackGameProject"
+   ]
+  ],
   "competition": false,
   "kind": "project",
   "outcome_kind": "학습 구현",
-  "outcome": "콘솔 블랙잭(카드·점수·딜러 규칙·승패)과 숫자 맞히기 구현"
+  "outcome": "콘솔 블랙잭(카드·점수·딜러 규칙·승패)과 숫자 맞히기 구현",
+  "category": "학습 프로젝트",
+  "teamSize": "협업 (학습)",
+  "benefitName": "블랙잭·숫자 맞히기 — 카드 규칙·승패 비교를 구현한 콘솔 게임 학습",
+  "problem": "카드 배분·에이스 점수 조정·딜러 규칙·승패 비교를 구현한 콘솔 블랙잭과 숫자 맞히기 초기 프로그래밍 학습입니다.",
+  "features": [
+   [
+    "게임 로직 구현",
+    "eunjin.py에서 deal_card·calculate_score·compare·play_game을 구현했습니다."
+   ]
+  ]
  }
 ];
 const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1003,7 +1584,7 @@ arts.cicd='<div class="art-word" style="color:#8f5a2a">CI / CD<small>FLASK · DO
 arts.recipe='<div class="art-word" style="color:#a85a24">Yakisoba<small>ONE-PAN RECIPE WEB</small></div>';
 arts.blackjack='<div class="art-word" style="color:#a36527">21<small>PYTHON LEARNING · CONSOLE GAME</small></div>';
 const grid=document.querySelector('#project-grid');
-const renderCards = list => list.map((p,i)=>`<article class="project-card" data-type="${p.type}" data-competition="${!!p.competition}"><div class="project-art ${p.art}"><span class="art-label">${esc(p.label)}</span>${arts[p.art]}<span class="art-id">${p.kind==='research'?'RESEARCH':'PROJECT'} ${String(i+1).padStart(2,'0')}</span></div><div class="project-content"><div class="project-topline"><span>${esc(p.date)}</span><span class="status">${esc(p.status)}</span></div><h3>${esc(p.title)}</h3><p class="description">${esc(p.subtitle)}</p><p class="role-line"><b>기여</b>${esc(p.role)}</p><div class="outcome-box"><span>성과 · ${esc(p.outcome_kind)}</span><p>${esc(p.outcome)}</p></div><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div><div class="project-bottom"><button data-project="${p.id}" aria-label="${esc(p.title)} 상세 보기">프로젝트 읽기 <span>↗</span></button>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>`:'<span style="font-size:10px;color:var(--muted)">프로젝트 기록</span>'}</div></div></article>`).join('');
+const renderCards = list => list.map((p,i)=>`<article class="project-card" data-type="${p.type}" data-competition="${!!p.competition}"><div class="project-art ${p.art}"><span class="art-label">${esc(p.label)}</span>${arts[p.art]}<span class="art-id">${p.kind==='research'?'RESEARCH':'PROJECT'} ${String(i+1).padStart(2,'0')}</span></div><div class="project-content"><div class="project-topline"><span>${esc(p.date)}</span><span class="status">${esc(p.status)}</span></div>${p.category?`<span class="card-cat">${esc(p.category)}</span>`:''}<h3>${esc(p.title)}</h3><p class="description">${esc(p.subtitle)}</p><p class="role-line"><b>기여</b>${esc(p.role)}</p><div class="outcome-box"><span>성과 · ${esc(p.outcome_kind)}</span><p>${esc(p.outcome)}</p></div><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div><div class="project-bottom"><button data-project="${p.id}" aria-label="${esc(p.title)} 상세 보기">프로젝트 읽기 <span>↗</span></button>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>`:'<span style="font-size:10px;color:var(--muted)">프로젝트 기록</span>'}</div></div></article>`).join('');
 grid.innerHTML=renderCards(projects.filter(p=>p.kind==='project'));
 document.querySelector('#research-experience-grid').innerHTML=renderCards(projects.filter(p=>p.kind==='research'));
 document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{
@@ -1011,9 +1592,25 @@ document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('cl
  let count=0;grid.querySelectorAll('.project-card').forEach(card=>{card.hidden=btn.dataset.filter==='competition'?card.dataset.competition!=='true':btn.dataset.filter!=='all'&&card.dataset.type!==btn.dataset.filter;if(!card.hidden)count++});
  document.querySelector('#project-count').textContent=`${count} projects`;
 }));
+const workTabs=document.querySelectorAll('.work-tabs [data-tab]');
+const workPanels={projects:document.querySelector('#projects-panel'),research:document.querySelector('#research-panel')};
+function switchWorkTab(name){if(!workPanels[name])return;workTabs.forEach(t=>{const on=t.dataset.tab===name;t.classList.toggle('active',on);t.setAttribute('aria-selected',on?'true':'false')});Object.entries(workPanels).forEach(([k,el])=>{if(el)el.hidden=k!==name})}
+workTabs.forEach(t=>t.addEventListener('click',()=>switchWorkTab(t.dataset.tab)));
+document.querySelectorAll('[data-gototab]').forEach(a=>a.addEventListener('click',()=>switchWorkTab(a.dataset.gototab)));
+const todoHtml='<span class="todo">보완 필요</span>';
+const fieldVal=v=>(!v||v==='보완 필요')?todoHtml:esc(v);
+const linkList=p=>`<div class="detail-links">${p.links.map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`).join('')}</div>`;
+const bulletList=rows=>(Array.isArray(rows)&&rows.length)?`<ul class="feature-list">${rows.map(([t,d])=>`<li><b>${esc(t)}</b>${esc(d)}</li>`).join('')}</ul>`:todoHtml;
+function dialogV2(p){
+ const specs=[['성과 · 결과',p.result?esc(p.result):'<span class="todo">X</span>'],['팀 구성',fieldVal(p.teamSize)],['내 역할',fieldVal(p.myRole||p.role)],['기술 스킬',`<span class="skill-row">${(p.skills||p.tags).map(s=>`<span class="spec-chip">${esc(s)}</span>`).join('')}</span>`]];
+ return `<div class="dialog-tags-top"><span class="cat-badge">${esc(p.category)}</span>${p.competition?'<span class="cat-badge alt">대회·공모전</span>':''}</div><h2 id="dialog-title">${esc(p.title)}</h2><p class="dialog-benefit">${esc(p.benefitName||p.subtitle)}</p><div class="spec-grid">${specs.map(([k,v])=>`<div><span>${k}</span><p>${v}</p></div>`).join('')}</div><h3>문제 제시</h3><p class="detail-p">${fieldVal(p.problem)}</p><h3>사회 기여 · 경제적 이득</h3><p class="detail-p">${fieldVal(p.impact)}</p><h3>핵심 기능</h3>${bulletList(p.features)}<h3>집중한 문제 · 트러블슈팅</h3>${bulletList(p.troubleshooting)}<p class="detail-note">${esc(p.note)}</p>${linkList(p)}`;
+}
+function dialogLegacy(p){
+ return `<p class="dialog-meta">${esc(p.date)} / ${esc(p.status)}</p><h2 id="dialog-title">${esc(p.title)}</h2><p class="dialog-summary">${esc(p.summary)}</p><div class="outcome-box"><span>성과 · ${esc(p.outcome_kind)}</span><p>${esc(p.outcome)}</p></div><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div>${p.metrics?`<div class="project-metrics">${p.metrics.map(([value,label])=>`<div><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`).join('')}</div>`:''}${p.sections.map(([title,text])=>`<h3>${esc(title)}</h3><p class="detail-p">${esc(text)}</p>`).join('')}<p class="detail-note">${esc(p.note)}</p>${linkList(p)}`;
+}
 const dialog=document.querySelector('#project-dialog');let lastTrigger=null;
 document.querySelector('main').addEventListener('click',event=>{const btn=event.target.closest('[data-project]');if(!btn)return;const p=projects.find(p=>p.id===btn.dataset.project);lastTrigger=btn;
- document.querySelector('#dialog-content').innerHTML=`<p class="dialog-meta">${esc(p.date)} / ${esc(p.status)}</p><h2 id="dialog-title">${esc(p.title)}</h2><p class="dialog-summary">${esc(p.summary)}</p><div class="outcome-box"><span>성과 · ${esc(p.outcome_kind)}</span><p>${esc(p.outcome)}</p></div><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div>${p.metrics?`<div class="project-metrics">${p.metrics.map(([value,label])=>`<div><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`).join('')}</div>`:''}${p.sections.map(([title,text])=>`<h3>${esc(title)}</h3><p class="detail-p">${esc(text)}</p>`).join('')}<p class="detail-note">${esc(p.note)}</p><div class="detail-links">${p.links.map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`).join('')}</div>`;
+ document.querySelector('#dialog-content').innerHTML=p.category?dialogV2(p):dialogLegacy(p);
  dialog.showModal();dialog.scrollTop=0;document.body.classList.add('dialog-open');
 });
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
