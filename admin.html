@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>포트폴리오 편집기 · Eunjin Lee</title>
+<style>
+:root{--v:#e34234;--vd:#b5362a;--ink:#3a2a2c;--muted:#8a6b63;--line:#f0d7cd;--paper:#fff7f3;--chip:#ffece3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Segoe UI','Noto Sans KR',system-ui,sans-serif;font-size:14px;line-height:1.6}
+header{background:linear-gradient(120deg,#e34234,#ef7a4a);color:#fff;padding:20px 26px}
+header h1{margin:0;font-size:18px}
+header p{margin:4px 0 0;font-size:12px;color:#ffe6df}
+.wrap{max-width:900px;margin:0 auto;padding:22px 20px 80px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.card h2{font-size:14px;margin:0 0 12px;color:var(--vd)}
+label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin:12px 0 5px}
+input[type=text],input[type=password],textarea,select{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fffdfb;color:var(--ink)}
+textarea{min-height:64px;resize:vertical}
+.hint{font-size:11px;color:var(--muted);margin-top:4px;font-weight:400}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+.row>div{flex:1;min-width:200px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 15px}
+button.primary{background:var(--v);color:#fff;border-color:var(--v);font-weight:600}
+button.primary:hover{background:#ef5647}
+button.danger{color:#b5362a;border-color:#f0c3b7}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.toolbar select{width:auto;min-width:260px;flex:1}
+#status{margin-top:12px;font-size:13px;min-height:20px}
+#status.ok{color:#1f8a46}#status.err{color:#c0392b}
+.chk{display:flex;align-items:center;gap:8px;margin-top:14px}
+.chk input{width:auto}
+.sticky{position:sticky;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:14px 20px;margin:0 -20px -80px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:12px}
+details{margin-top:8px}summary{cursor:pointer;font-size:12px;color:var(--vd)}
+a{color:#2455d6}
+.muted{color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+ <h1>포트폴리오 편집기</h1>
+ <p>프로젝트·연구 내용을 직접 수정하고 GitHub에 바로 저장합니다. (비공개 편집용 페이지)</p>
+</header>
+<div class="wrap">
+
+ <div class="card">
+  <h2>1. GitHub 토큰</h2>
+  <p class="muted">이 저장소(<code>molba2see/research-portfolio</code>) 전용 <b>Fine-grained token</b>을 만들어 넣으세요. 권한은 <b>Contents: Read and write</b> 하나면 됩니다. 토큰은 이 브라우저에만 저장되고 서버로 보내지 않습니다.
+   <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">토큰 만들기 ↗</a></p>
+  <label for="token">토큰</label>
+  <input id="token" type="password" placeholder="github_pat_...">
+  <div class="row" style="margin-top:12px">
+   <button id="save-token" class="primary">토큰 저장</button>
+   <button id="clear-token">토큰 지우기</button>
+   <span id="token-state" class="muted"></span>
+  </div>
+ </div>
+
+ <div class="card">
+  <h2>2. 불러오기 / 항목 선택</h2>
+  <div class="toolbar">
+   <button id="load" class="primary">GitHub에서 불러오기</button>
+   <select id="entry" aria-label="편집할 항목"></select>
+   <button id="add">+ 새 프로젝트</button>
+   <button id="del" class="danger">이 항목 삭제</button>
+  </div>
+  <p id="meta" class="muted" style="margin-top:10px"></p>
+ </div>
+
+ <div class="card" id="editor" hidden>
+  <h2>3. 내용 편집</h2>
+  <div class="grid2">
+   <div><label for="f-kind">구분 유형 (kind)</label>
+    <select id="f-kind"><option value="project">project (프로젝트 탭)</option><option value="research">research (연구·논문 탭)</option></select></div>
+   <div><label for="f-id">ID (고유값, 영문/숫자)</label><input id="f-id" type="text"><div class="hint">URL·식별에 쓰입니다. 중복되지 않게.</div></div>
+  </div>
+  <div class="grid2">
+   <div><label for="f-category">구분 (배지)</label><input id="f-category" type="text" placeholder="예: 팀 프로젝트, 대회·공모전"></div>
+   <div><label for="f-type">분야 필터 (type)</label><input id="f-type" type="text" list="types" placeholder="recommendation / language / analysis / software">
+    <datalist id="types"><option>recommendation</option><option>language</option><option>analysis</option><option>software</option></datalist></div>
+  </div>
+  <label for="f-title">프로젝트명 (title)</label><input id="f-title" type="text">
+  <label for="f-benefit">기능적 이점 한 줄 (benefitName)</label><input id="f-benefit" type="text" placeholder="예: Link:D Match — 상품에 맞는 인플루언서를 자동으로 잇는 매칭">
+  <label for="f-subtitle">부제 (subtitle)</label><input id="f-subtitle" type="text">
+  <div class="grid2">
+   <div><label for="f-date">기간 (date)</label><input id="f-date" type="text" placeholder="예: 2026 봄"></div>
+   <div><label for="f-status">상태 (status)</label><input id="f-status" type="text" placeholder="예: 5인 팀 · 캡스톤"></div>
+  </div>
+  <div class="grid2">
+   <div><label for="f-result">성과·결과 (비우면 X 표시)</label><input id="f-result" type="text" placeholder="수상·사용자 등. 없으면 비움"></div>
+   <div><label for="f-team">팀 구성 (비우면 '보완 필요')</label><input id="f-team" type="text" placeholder="예: 5인 팀"></div>
+  </div>
+  <label for="f-role">내 역할 (role)</label><input id="f-role" type="text">
+  <label for="f-tags">기술 스킬 (쉼표로 구분)</label><input id="f-tags" type="text" placeholder="Django, FastAPI, AWS">
+  <label for="f-repo">GitHub 링크 (repo, 비우면 '프로젝트 기록')</label><input id="f-repo" type="text" placeholder="https://github.com/...">
+  <label for="f-problem">문제 제시 (비우면 '보완 필요')</label><textarea id="f-problem"></textarea>
+  <label for="f-impact">사회 기여·경제적 이득 (비우면 '보완 필요')</label><textarea id="f-impact"></textarea>
+  <label for="f-features">핵심 기능 — 한 줄에 하나, <code>제목 | 설명</code></label><textarea id="f-features" placeholder="의미 기반 매칭 | 상품 설명을 임베딩해 유사도를 계산합니다."></textarea>
+  <label for="f-trouble">트러블슈팅 — 한 줄에 하나, <code>제목 | 설명</code> (비우면 '보완 필요')</label><textarea id="f-trouble"></textarea>
+  <label for="f-links">링크 — 한 줄에 하나, <code>라벨 | URL</code></label><textarea id="f-links" placeholder="프로젝트 코드 | https://github.com/..."></textarea>
+  <label for="f-note">비고 (note)</label><textarea id="f-note"></textarea>
+  <div class="grid2">
+   <div><label for="f-okind">성과 종류 (카드 outcome_kind)</label><input id="f-okind" type="text"></div>
+   <div><label for="f-outcome">카드 성과 한 줄 (outcome)</label><input id="f-outcome" type="text"></div>
+  </div>
+  <div class="chk"><input id="f-competition" type="checkbox"><label for="f-competition" style="margin:0">대회·공모전 (필터 '대회·공모전'에 포함)</label></div>
+  <details>
+   <summary>고급: 카드 그림(art)·라벨·연구용 섹션·요약</summary>
+   <label for="f-art">art (카드 그림 키)</label><input id="f-art" type="text" placeholder="research / match / software / language ...">
+   <div class="hint">기존 키 중 하나여야 그림이 나옵니다. 모르면 <code>research</code>(그래프) 권장. 새 그림은 코드 수정 필요.</div>
+   <label for="f-label">라벨 (art-label, 영문 대문자)</label><input id="f-label" type="text" placeholder="RECOMMENDATION / DEPLOYMENT">
+   <label for="f-summary">요약 (summary · 연구 탭 상세에서 사용)</label><textarea id="f-summary"></textarea>
+   <label for="f-sections">연구용 섹션 — 한 줄에 하나, <code>제목 | 내용</code> (연구 탭 상세)</label><textarea id="f-sections"></textarea>
+  </details>
+ </div>
+
+ <div class="sticky">
+  <button id="commit" class="primary">GitHub에 저장 · 배포</button>
+  <span id="status"></span>
+ </div>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
